@@ -13,11 +13,7 @@
 
 {%include "WEB-features.rst.jj2" %}
 
-
-Known constraints
-==================
-
-Fonts, colors and charts are not supported. 
+{%include "constraints.rst.jj2" %}
 
 {%block header %}
 {%endblock%}
@@ -33,8 +29,4 @@ Installation
 {%block usage%}
 {%endblock%}
 
-License
-==========
-
-New BSD License
-
+{%include "license.rst.jj2" %}

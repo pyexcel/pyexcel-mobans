@@ -11,27 +11,7 @@
 {%block description %}
 {%endblock %}
 
-Known constraints
-================================================================================
-
-Fonts, colors and charts are not supported. 
-
-Installation
-================================================================================
-
-You can install it via pip:
-
-.. code-block:: bash
-
-    $ pip install {{name}}
-
-or clone it and install it:
-
-.. code-block:: bash
-
-    $ git clone http://github.com/pyexcel/{{name}}.git
-    $ cd {{name}}
-    $ python setup.py install
+{%include "installation.rst.jj2" %}
 
 Usage
 ================================================================================
@@ -212,10 +192,7 @@ You need to pass a StringIO instance to Writer:
     >>> # In reality, you might give it to your http response
     >>> # object for downloading
 
-License
-================================================================================
-
-{{license}} License
+{%include "license.rst.jj2" %}
 
 {%block extras %}
 {%endblock %}
