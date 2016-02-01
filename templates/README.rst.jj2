@@ -11,6 +11,8 @@
 {%block description %}
 {%endblock %}
 
+{%include "constraints.rst.jj2" %}
+
 {%include "installation.rst.jj2" %}
 
 Usage
