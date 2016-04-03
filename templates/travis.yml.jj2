@@ -2,9 +2,7 @@ sudo: false
 language: python
 notifications:
   email: false
-env:
 {%block test_other_environments%}
-  global:
 {%endblock%}
 python:
   - 2.7
@@ -12,10 +10,9 @@ python:
 {%endblock%}
 {%block exclusion_matrix%}
 {%endblock%}
-install:
+before_script:
 {% block custom_install %}
 {% endblock%}
-  - pip install -r requirements.txt
   - pip install -r tests/requirements.txt
 script:
   make test
