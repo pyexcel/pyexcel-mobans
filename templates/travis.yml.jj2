@@ -10,7 +10,7 @@ python:
 {%endblock%}
 {%block exclusion_matrix%}
 {%endblock%}
-before_script:
+before_install:
 {% block custom_install %}
 {% endblock%}
   - pip install -r tests/requirements.txt
