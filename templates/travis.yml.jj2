@@ -4,9 +4,15 @@ notifications:
   email: false
 {%block test_other_environments%}
 {%endblock%}
+{%block custom_python_versions%}
 python:
+  - pypy
+  - 2.6
   - 2.7
-{%block test_other_python_versions%}
+  - pypy3
+  - 3.3
+  - 3.4
+  - 3.5
 {%endblock%}
 {%block exclusion_matrix%}
 {%endblock%}
