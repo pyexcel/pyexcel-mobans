@@ -5,20 +5,29 @@ except ImportError:
     use_setuptools()
     from setuptools import setup, find_packages
 
-with open("README.rst", 'r') as readme:
-    README_txt = readme.read()
+NAME = '{{name}}'
+AUTHOR = '{{author}}'
+VERSION = '{{version}}'
+EMAIL = '{{contact}}'
+LICENSE = '{{license}}'
+PACKAGES = find_packages(exclude=['ez_setup', 'examples', 'tests'])
+DESCRIPTION = '{{description}}'
+KEYWORDS = [
+   'excel',
+   'python',
+   'pyexcel',
+   {%block additional_keywords%}
+   {%endblock%}
+]
 
-with open("CHANGELOG.rst", 'r') as changelog:
-    README_txt += changelog.read()
-
-dependencies = [
+INSTALL_REQUIRES = [
 {% for dependency in dependencies: %}
     '{{dependency}}',
 {% endfor %}
 ]
 
 {% if extra_dependencies: %}
-extras = {
+EXTRAS_REQUIRE = {
   {% for dependency in extra_dependencies: %}
      {% for key, value in dependency.items(): %}
     '{{key}}': {{value}},
@@ -26,42 +35,50 @@ extras = {
   {% endfor %}
 }
 {% else: %}
-extras = {}
+EXTRAS_REQUIRE = {}
 {% endif %}
 
-{%block extras %}
-{%endblock %}
+CLASSIFIERS = [
+    'Topic :: Office/Business',
+    'Topic :: Utilities',
+    'Topic :: Software Development :: Libraries',
+    'Programming Language :: Python',
+    'License :: OSI Approved :: BSD License',
+    'Intended Audience :: Developers',
+    {%block additional_classifiers%}
+    {%endblock %}
+]
 
-setup(
-    name='{{name}}',
-    author='{{author}}',
-    version='{{version}}',
-    author_email='{{contact}}',
-    url='https://github.com/{{organisation}}/{{name}}',
-    description='{{description}}',
-    install_requires=dependencies,
-    extras_require=extras,
-    packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
-    include_package_data=True,
-    long_description=README_txt,
-    zip_safe=False,
-    tests_require=['nose'],
-    keywords=[
-        'excel',
-        'python',
-        'pyexcel',
-    {%block additional_keywords%}
-    {%endblock%}
-    ],
-    license='{{license}}',
-    classifiers=[
-        'Topic :: Office/Business',
-        'Topic :: Utilities',
-        'Topic :: Software Development :: Libraries',
-        'Programming Language :: Python',
-        'License :: OSI Approved :: BSD License',
-        'Intended Audience :: Developers',
-        {%block additional_classifiers%}
-        {%endblock %}
-    ]
-)
+
+def read_files(*files):
+    """Read files into setup"""
+    text = ""
+    for single_file in files:
+        text = text + read(single_file) + "\n"
+    return text
+
+
+def read(afile):
+    """Read a file into setup"""
+    with open(afile, 'r') as opened_file:
+        return opened_file.read()
+
+
+if __name__ == '__main__':
+    setup(
+        name=NAME,
+        author=AUTHOR,
+        version=VERSION,
+        author_email=EMAIL,
+        description=DESCRIPTION,
+        install_requires=INSTALL_REQUIRES,
+        keywords=KEYWORDS,
+        extras_require=EXTRAS_REQUIRE,
+        packages=PACKAGES,
+        include_package_data=True,
+        long_description=read_files('README.rst', 'CHANGELOG.rst'),
+        zip_safe=False,
+        tests_require=['nose'],
+        license=LICENSE,
+        classifiers=CLASSIFIERS
+    )
