@@ -19,6 +19,7 @@ python:
 before_install:
 {% block custom_install %}
 {% endblock%}
+  - pip install -r rnd_requirements.txt
   - pip install -r tests/requirements.txt
 script:
   make test
