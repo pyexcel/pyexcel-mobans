@@ -141,13 +141,13 @@ Here is the sample code:
     >>> # from pyexcel.ext import {{nick_name}}
     >>> sheet = pe.get_book(file_name="your_file.{{file_type}}")
     >>> sheet
-    Sheet Name: Sheet 1
+    Sheet 1:
     +---+---+---+
     | 1 | 2 | 3 |
     +---+---+---+
     | 4 | 5 | 6 |
     +---+---+---+
-    Sheet Name: Sheet 2
+    Sheet 2
     +-------+-------+-------+
     | row 1 | row 2 | row 3 |
     +-------+-------+-------+
@@ -177,13 +177,13 @@ You got to wrap the binary content with stream to get {{file_type}} working:
     ...     r = pe.get_book(file_type="{{file_type}}", file_content=content)
     ...     print(r)
     ...
-    Sheet Name: Sheet 1
+    Sheet 1:
     +---+---+---+
     | 1 | 2 | 3 |
     +---+---+---+
     | 4 | 5 | 6 |
     +---+---+---+
-    Sheet Name: Sheet 2
+    Sheet 2:
     +-------+-------+-------+
     | row 1 | row 2 | row 3 |
     +-------+-------+-------+
@@ -208,6 +208,12 @@ You need to pass a StringIO instance to Writer:
     >>> # object for downloading
 
 {%include "license.rst.jj2" %}
+
+Developer guide
+==================
+
+{%include 'developer_guide.rst.jj2' %}
+
 
 {%block extras %}
 {%endblock %}
