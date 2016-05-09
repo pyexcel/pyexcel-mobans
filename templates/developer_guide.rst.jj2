@@ -26,4 +26,3 @@ On Linux/Unix systems, please launch your tests like this::
 On Windows systems, please issue this command::
 
     > test.bat
-
