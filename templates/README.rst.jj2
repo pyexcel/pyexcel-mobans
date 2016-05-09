@@ -214,7 +214,6 @@ Developer guide
 
 {%include 'developer_guide.rst.jj2' %}
 
-
 {%block extras %}
 {%endblock %}
 
