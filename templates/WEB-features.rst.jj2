@@ -36,7 +36,7 @@ The highlighted features are:
    `pyexcel-text`_  (write only)json, rst, mediawiki,
                     latex, grid, pipe, orgtbl, plain simple
    ================ ========================================
-   
+
 .. _pyexcel-xls: https://github.com/pyexcel/pyexcel-xls
 .. _pyexcel-xlsx: https://github.com/pyexcel/pyexcel-xlsx
 .. _pyexcel-ods: https://github.com/pyexcel/pyexcel-ods
