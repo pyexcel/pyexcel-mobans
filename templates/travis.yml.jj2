@@ -21,7 +21,10 @@ python:
 before_install:
 {% block custom_install %}
 {% endblock%}
-  - if [[ -f rnd_requirements.txt ]]; then pip install -r rnd_requirements.txt; fi
+  - if [[ -f rnd_requirements.txt ]]; then
+      pip install --upgrade "setuptools==17.1" ;
+      pip install -r rnd_requirements.txt ;
+    fi
   - pip install -r tests/requirements.txt
 script:
   make test
