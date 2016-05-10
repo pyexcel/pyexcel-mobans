@@ -36,7 +36,7 @@ Setup
 
 More excel file formats
 ------------------------
-    
+
 The example application understands csv, tsv and its zipped variants: csvz and tsvz. If you would like to expand the list of supported excel file formats (see :ref:`file-format-list`) for your own application, you could include one or all of the following import lines right after **{{name}}** is imported::
 
     import pyexcel.ext.xls # pip install pyexcel-xls
