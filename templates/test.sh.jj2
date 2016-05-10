@@ -1,2 +1,2 @@
 pip freeze
-nosetests --with-cov --cov pyexcel_{{nick_name}} --cov tests --with-doctest --doctest-extension=.rst tests README.rst pyexcel_{{nick_name}}
+nosetests --with-cov --cover-package pyexcel_{{nick_name}} --cover-package tests --with-doctest --doctest-extension=.rst tests README.rst pyexcel_{{nick_name}}
