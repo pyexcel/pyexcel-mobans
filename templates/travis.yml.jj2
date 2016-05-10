@@ -16,6 +16,8 @@ python:
 {%endblock%}
 {%block exclusion_matrix%}
 {%endblock%}
+{%block extra_matrix%}
+{%endblock%}
 before_install:
 {% block custom_install %}
 {% endblock%}
