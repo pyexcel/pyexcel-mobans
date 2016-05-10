@@ -37,7 +37,7 @@ EXTRAS_REQUIRE = {
   {% endfor %}
   {% for dependency in dependencies: %}
   {%   if ';' in dependency: %}
-  '{{dependency.split(';')[1].strip()}}': [
+  ':{{dependency.split(';')[1].strip()}}': [
     '{{dependency.split(';')[0].strip()}}'
   ],
   {%   endif %}
