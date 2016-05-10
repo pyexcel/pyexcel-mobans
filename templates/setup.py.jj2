@@ -22,16 +22,25 @@ KEYWORDS = [
 
 INSTALL_REQUIRES = [
 {% for dependency in dependencies: %}
+  {%   if ';' not in dependency: %}
     '{{dependency}}',
+  {%   endif %}
 {% endfor %}
 ]
 
-{% if extra_dependencies: %}
+{% if extra_dependencies or dependencies: %}
 EXTRAS_REQUIRE = {
   {% for dependency in extra_dependencies: %}
      {% for key, value in dependency.items(): %}
     '{{key}}': {{value}},
      {% endfor %}
+  {% endfor %}
+  {% for dependency in dependencies: %}
+  {%   if ';' in dependency: %}
+  '{{dependency.split(';')[1].strip()}}': [
+    '{{dependency.split(';')[0].strip()}}'
+  ],
+  {%   endif %}
   {% endfor %}
 }
 {% else: %}
