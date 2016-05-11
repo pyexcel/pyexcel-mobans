@@ -1,0 +1,14 @@
+{% for dependency in dependencies: %}
+{%     if dependency.startswith('texttable'): %}
+{# See https://github.com/foutaise/texttable/issues/5 #}
+{%         if ';' in dependency: %}
+texttable==0.8.3;{{dependency.split(';')[1]}}
+{%         else: %}
+texttable==0.8.3
+{%         endif %}
+{%     elif ';' in dependency: %}
+{{dependency.split(';')[0].replace('>=', '==').replace('>', '==') + ';' + dependency.split(';')[1]}}
+{%     else: %}
+{{dependency.replace('>=', '==').replace('>', '==')}}
+{%     endif %}
+{% endfor %}
