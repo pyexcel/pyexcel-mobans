@@ -11,13 +11,18 @@ VERSION = '{{version}}'
 EMAIL = '{{contact}}'
 LICENSE = '{{license}}'
 PACKAGES = find_packages(exclude=['ez_setup', 'examples', 'tests'])
-DESCRIPTION = '{{description}}'
+DESCRIPTION = (
+{% for i in range(0, description|length, 70) %}
+    '{{ description[i:(70+i)] }}' +
+{% endfor %}
+    ''
+)
 KEYWORDS = [
-   'excel',
-   'python',
-   'pyexcel',
-   {%block additional_keywords%}
-   {%endblock%}
+    'excel',
+    'python',
+    'pyexcel',
+    {%block additional_keywords%}
+    {%endblock%}
 ]
 
 INSTALL_REQUIRES = [
@@ -37,9 +42,9 @@ EXTRAS_REQUIRE = {
   {% endfor %}
   {% for dependency in dependencies: %}
   {%   if ';' in dependency: %}
-  ':{{dependency.split(';')[1].strip()}}': [
-    '{{dependency.split(';')[0].strip()}}'
-  ],
+    ':{{dependency.split(';')[1].strip()}}': [
+        '{{dependency.split(';')[0].strip()}}'
+    ],
   {%   endif %}
   {% endfor %}
 }
