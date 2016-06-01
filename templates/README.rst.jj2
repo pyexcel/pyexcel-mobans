@@ -190,7 +190,7 @@ You need to pass a StringIO instance to Writer:
     ... ]
     >>> io = StringIO()
     >>> sheet = pe.Sheet(data)
-    >>> sheet.save_to_memory("{{file_type}}", io)
+    >>> io = sheet.save_to_memory("{{file_type}}", io)
     >>> # then do something with io
     >>> # In reality, you might give it to your http response
     >>> # object for downloading
