@@ -37,14 +37,15 @@ Setup
 More excel file formats
 ------------------------
 
-The example application understands csv, tsv and its zipped variants: csvz and tsvz. If you would like to expand the list of supported excel file formats (see :ref:`file-format-list`) for your own application, you could include one or all of the following import lines right after **{{name}}** is imported::
+The example application understands csv, tsv and its zipped variants: csvz and tsvz. If you would like to expand the list of supported excel file formats (see :ref:`file-format-list`) for your own application, you could install one or all of the following::
 
-    import pyexcel.ext.xls # pip install pyexcel-xls
-    import pyexcel.ext.xlsx # pip install pyexcel-xlsx
-    import pyexcel.ext.ods # pip install pyexcel-ods
+    pip install pyexcel-xls
+    pip install pyexcel-xlsx
+    pip install pyexcel-ods
 
-.. note::
+.. warning::
 
+   If you are using pyexcel <=0.2.1, you still need to import each plugin manually, e.g. `import pyexcel.ext.xls` and
    Your IDE or pyflakes may highlight it as un-used but it is used. The registration of
    the extra file format support happens when the import action is performed
 
