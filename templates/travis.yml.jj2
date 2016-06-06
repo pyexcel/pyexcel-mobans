@@ -30,7 +30,6 @@ before_install:
   - pip install -r tests/requirements.txt
   - pip install flake8
 script:
-  - flake8 . {%block flake8_options%}{%endblock%}
   - make test
 after_success:
   codecov

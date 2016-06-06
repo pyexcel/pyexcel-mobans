@@ -1,3 +1,4 @@
 pip freeze
 nosetests --with-cov --cover-package pyexcel{% if name != nick_name %}_{{nick_name}}{%endif%} --cover-package tests --with-doctest --doctest-extension=.rst tests README.rst pyexcel{% if name != nick_name %}_{{nick_name}}
-{%endif%} && flake8 .
+{%endif%} && flake8 . {%block flake8_options%}{%endblock%}
+
