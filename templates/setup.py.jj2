@@ -10,6 +10,13 @@ AUTHOR = '{{author}}'
 VERSION = '{{version}}'
 EMAIL = '{{contact}}'
 LICENSE = '{{license}}'
+{% if command_line_interface %}
+ENTRY_POINTS = {
+    'console_scripts':[
+        '{{command_line_interface}} = {{ entry_point }}'
+    ]
+}
+{% endif %}
 PACKAGES = find_packages(exclude=['ez_setup', 'examples', 'tests'])
 DESCRIPTION = '{{description}}'
 KEYWORDS = [
@@ -89,5 +96,8 @@ if __name__ == '__main__':
         zip_safe=False,
         tests_require=['nose'],
         license=LICENSE,
+{% if command_line_interface %}
+        entry_points=ENTRY_POINTS,
+{% endif %}
         classifiers=CLASSIFIERS
-    )
+)
