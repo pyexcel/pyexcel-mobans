@@ -1,31 +1,5 @@
-================================================================================
-{{name}} - Let you focus on data, instead of file formats
-================================================================================
+{%extends "BASIC-README.rst.jj2%}
 
-.. image:: https://api.travis-ci.org/{{organisation}}/{{name}}.svg?branch=master
-   :target: http://travis-ci.org/{{organisation}}/{{name}}
-
-.. image:: https://codecov.io/github/{{organisation}}/{{name}}/coverage.png
-    :target: https://codecov.io/github/{{organisation}}/{{name}}
-
-.. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
-   :target: http://{{name|lower}}.readthedocs.org/en/latest/
-
+{%block features%}
 {%include "WEB-features.rst.jj2" %}
-
-{%include "constraints.rst.jj2" %}
-
-{%block header %}
 {%endblock%}
-
-Installation
-================================================================================
-{%include "installation.rst.jj2" %}
-
-{%block setup%}
-{%endblock%}
-
-{%block usage%}
-{%endblock%}
-
-{%include "license.rst.jj2" %}

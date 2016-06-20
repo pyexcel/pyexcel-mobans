@@ -12,7 +12,7 @@ EMAIL = '{{contact}}'
 LICENSE = '{{license}}'
 {% if command_line_interface %}
 ENTRY_POINTS = {
-    'console_scripts':[
+    'console_scripts': [
         '{{command_line_interface}} = {{ entry_point }}'
     ]
 }
@@ -105,4 +105,4 @@ if __name__ == '__main__':
         entry_points=ENTRY_POINTS,
 {% endif %}
         classifiers=CLASSIFIERS
-)
+    )
