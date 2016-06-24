@@ -1,0 +1,9 @@
+`{{name}}` - Let you focus on data, instead of file formats
+================================================================================
+
+:Author: {{author}}
+:Source code: http://github.com/{{organisation}}/{{name}}.git
+:Issues: http://github.com/{{organisation}}/{{name}}/issues
+:License: New BSD License
+:Version: |version|
+:Generated: |today|
