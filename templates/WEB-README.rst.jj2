@@ -1,4 +1,4 @@
-{%extends "BASIC-README.rst.jj2%}
+{%extends "BASIC-README.rst.jj2"%}
 
 {%block features%}
 {%include "WEB-features.rst.jj2" %}
