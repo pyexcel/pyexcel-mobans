@@ -1,3 +1,8 @@
-pip freeze
-nosetests --with-cov --cover-package pyexcel{% if name != nick_name %}_{{nick_name}}{%endif%} --cover-package tests --with-doctest --doctest-extension=.rst tests README.rst {%if webframework%} {{webframework|lower}}_excel {%else%}pyexcel{% if name != nick_name %}_{{nick_name}} {%endif%} {%endif%}&& flake8 . --exclude=.moban.d --builtins=unicode,xrange,long{%block flake8_options%}{%endblock%}
+{%block pretest%}
+{%endblock%}
 
+pip freeze
+nosetests --with-cov --cover-package pyexcel{% if name != nick_name %}_{{nick_name}}{%endif%} --cover-package tests --with-doctest --doctest-extension=.rst tests README.rst {%if webframework%} {{webframework|lower}}_excel {%else%}pyexcel{% if name != nick_name %}_{{nick_name}} {%endif%} {%endif%}&& flake8 . --exclude=.moban.d {%block flake8_options%}{%endblock%}
+
+{%block posttest%}
+{%endblock%}
