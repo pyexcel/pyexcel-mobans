@@ -9,7 +9,8 @@ Welcome to {{name}}'s documentation!
 :Author: {{author}}
 :Issues: http://github.com/{{organisation}}/{{name}}/issues
 :License: {{license}} License
-:Version: |version|
+:Development: |version|
+:Released: |release|
 :Generated: |today|
 
 {%include "WEB-features.rst.jj2" %}

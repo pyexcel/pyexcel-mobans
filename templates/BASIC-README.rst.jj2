@@ -1,5 +1,6 @@
 ================================================================================
-{{name}} - {%block slogan%}Let you focus on data, instead of file formats{%endblock%}
+{{name}} - {%block slogan%}Let you focus on data, instead of file formats
+{%endblock%}
 ================================================================================
 
 .. image:: https://api.travis-ci.org/{{organisation}}/{{name}}.svg?branch=master
