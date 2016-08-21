@@ -70,10 +70,5 @@ API Reference
 {%block api_doc %}
 {%endblock%}
 
-Indices and tables
---------------------
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+{%block changelog%}
+{%endblock%}
