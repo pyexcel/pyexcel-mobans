@@ -30,6 +30,7 @@ Write to an {{file_type}} file
 .. testcode::
    :hide:
 
+    >>> import os
     >>> import sys
     >>> if sys.version_info[0] < 3:
     ...     from StringIO import StringIO
@@ -52,6 +53,7 @@ Here's the sample code to write a dictionary to an {{file_type}} file:
     >>> data.update({"Sheet 2": [["row 1", "row 2", "row 3"]]})
     >>> save_data("your_file.{{file_type}}", data)
 
+{%block read_from_file %}
 Read from an {{file_type}} file
 ********************************************************************************
 
@@ -64,6 +66,8 @@ Here's the sample code:
     >>> import json
     >>> print(json.dumps(data))
     {"Sheet 1": [[1, 2, 3], [4, 5, 6]], "Sheet 2": [["row 1", "row 2", "row 3"]]}
+
+{%endblock%}
 
 Write an {{file_type}} to memory
 ********************************************************************************
@@ -86,6 +90,7 @@ Here's the sample code to write a dictionary to an {{file_type}} file:
 {%block middle_block %}
 {%endblock%}
 
+{%block read_from_memory %}
 Read from an {{file_type}} from memory
 ********************************************************************************
 
@@ -100,7 +105,9 @@ Continue from previous example:
     >>> print(json.dumps(data))
     {"Sheet 1": [[1, 2, 3], [4, 5, 6]], "Sheet 2": [[7, 8, 9], [10, 11, 12]]}
 
+{%endblock%}
 
+{%block pagination%}
 Pagination feature
 ********************************************************************************
 
@@ -145,6 +152,12 @@ Obvious, you could do both at the same time:
    >>> partial_data['huge']
    [[23, 33], [24, 34], [25, 35]]
 
+.. testcode::
+   :hide:
+
+   >>> os.unlink("huge_file.{{file_type}}")
+
+{%endblock%}
 
 As a pyexcel plugin
 --------------------------------------------------------------------------------
@@ -162,6 +175,8 @@ Import it in your file to enable this plugin:
     from pyexcel.ext import {{nick_name}}
 
 Please note only pyexcel version 0.0.4+ support this.
+
+{%block read_from_file_via_pyexcel %}
 
 Reading from an {{file_type}} file
 ********************************************************************************
@@ -185,6 +200,8 @@ Here is the sample code:
     | row 1 | row 2 | row 3 |
     +-------+-------+-------+
 
+{%endblock%}
+
 Writing to an {{file_type}} file
 ********************************************************************************
 
@@ -193,6 +210,8 @@ Here is the sample code:
 .. code-block:: python
 
     >>> sheet.save_as("another_file.{{file_type}}")
+
+{%block read_from_memory_via_pyexcel %}
 
 Reading from a IO instance
 ================================================================================
@@ -221,6 +240,7 @@ You got to wrap the binary content with stream to get {{file_type}} working:
     | row 1 | row 2 | row 3 |
     +-------+-------+-------+
 
+{%endblock%}
 
 Writing to a StringIO instance
 ================================================================================
@@ -255,5 +275,4 @@ Developer guide
 
    >>> import os
    >>> os.unlink("your_file.{{file_type}}")
-   >>> os.unlink("huge_file.{{file_type}}")
    >>> os.unlink("another_file.{{file_type}}")
