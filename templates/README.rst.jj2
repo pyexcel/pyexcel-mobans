@@ -214,7 +214,7 @@ Here is the sample code:
 {%block read_from_memory_via_pyexcel %}
 
 Reading from a IO instance
-================================================================================
+********************************************************************************
 
 You got to wrap the binary content with stream to get {{file_type}} working:
 
@@ -243,7 +243,7 @@ You got to wrap the binary content with stream to get {{file_type}} working:
 {%endblock%}
 
 Writing to a StringIO instance
-================================================================================
+********************************************************************************
 
 You need to pass a StringIO instance to Writer:
 
