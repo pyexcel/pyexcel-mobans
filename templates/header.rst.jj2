@@ -5,6 +5,6 @@
 :Source code: http://github.com/{{organisation}}/{{name}}.git
 :Issues: http://github.com/{{organisation}}/{{name}}/issues
 :License: New BSD License
-:Development: |version|
-:Released: |release|
+:Development: |release|
+:Released: |version|
 :Generated: |today|

@@ -18,8 +18,8 @@ master_doc = 'index'
 
 project = u'{{name}}'
 copyright = u'{{copyright_year}} {{company}}'
-version = '{{version}}'
-release = '{{release}}'
+version = '{{release}}'
+release = '{{version}}'
 exclude_patterns = []
 pygments_style = 'sphinx'
 {%block custom_doc_theme%}
