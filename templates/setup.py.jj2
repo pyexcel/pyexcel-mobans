@@ -4,6 +4,13 @@ except ImportError:
     from ez_setup import use_setuptools
     use_setuptools()
     from setuptools import setup, find_packages
+{%block compat_block%}
+import sys
+from platform import python_implementation
+
+PY2 = sys.version_info[0] == 2
+PY26 = PY2 and sys.version_info[1] < 7
+{%endblock%}
 
 NAME = '{{name}}'
 AUTHOR = '{{author}}'
@@ -32,13 +39,35 @@ KEYWORDS = [
     {%endblock%}
 ]
 
+{%macro handle_complex_dependency(complex_one) -%}
+{%set dependency, condition = complex_one.split(';')%}
+{% if condition == 'python_version<"3"'%}
+if PY2:
+{% endif %}
+{% if condition == 'python_version>="3"'%}
+if not PY2:
+{% endif %}
+{% if condition == 'python_version<"2.7"'%}
+if PY26:
+{% endif %}
+{% if condition == 'platform_python_implementation=="PyPy"'%}
+if python_implementation == "PyPy":
+{%endif%}
+    INSTALL_REQUIRES.append('{{dependency}}')
+{%- endmacro %}
 INSTALL_REQUIRES = [
 {% for dependency in dependencies: %}
-  {%   if ';' not in dependency: %}
+  {% if ';' not in dependency: %}
     '{{dependency}}',
   {%   endif %}
 {% endfor %}
 ]
+
+{% for dependency in dependencies: %}
+  {%  if ';' in dependency: %}
+{{handle_complex_dependency(dependency)}}
+  {%   endif %}
+{% endfor %}
 
 {% if extra_dependencies or dependencies: %}
 EXTRAS_REQUIRE = {
@@ -46,13 +75,6 @@ EXTRAS_REQUIRE = {
      {% for key, value in dependency.items(): %}
     '{{key}}': {{value}},
      {% endfor %}
-  {% endfor %}
-  {% for dependency in dependencies: %}
-  {%   if ';' in dependency: %}
-    ':{{dependency.split(';')[1].strip()}}': [
-        '{{dependency.split(';')[0].strip()}}'
-    ],
-  {%   endif %}
   {% endfor %}
 }
 {% else: %}
