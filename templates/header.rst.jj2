@@ -1,10 +1,11 @@
-`{{name}}` - Let you focus on data, instead of file formats
+`{{name}}` - {%block slogan%}Let you focus on data, instead of file formats
+{%endblock%}
 ================================================================================
 
 :Author: {{author}}
 :Source code: http://github.com/{{organisation}}/{{name}}.git
 :Issues: http://github.com/{{organisation}}/{{name}}/issues
-:License: New BSD License
+:License: {{license}} License
 :Development: |release|
 :Released: |version|
 :Generated: |today|

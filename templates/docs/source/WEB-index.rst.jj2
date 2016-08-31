@@ -3,15 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to {{name}}'s documentation!
-================================================================================
-
-:Author: {{author}}
-:Issues: http://github.com/{{organisation}}/{{name}}/issues
-:License: {{license}} License
-:Development: |release|
-:Released: |version|
-:Generated: |today|
+{%include "header.rst.jj2" %}
 
 {%include "WEB-features.rst.jj2" %}
 

@@ -33,26 +33,8 @@ The highlighted features are:
 #. supports csv, tsv, csvz, tsvz by default and other formats are supported via
    the following plugins:
 
-.. _file-format-list:
+{% include "plugins-list.rst.jj2" %}
 
-.. table:: A list of file formats supported by external plugins
-
-   ================ ========================================
-   Plugins          Supported file formats
-   ================ ========================================
-   `pyexcel-xls`_   xls, xlsx(r), xlsm(r)
-   `pyexcel-xlsx`_  xlsx
-   `pyexcel-ods3`_  ods (python 2.6, 2.7, 3.3, 3.4)
-   `pyexcel-ods`_   ods (python 2.6, 2.7)
-   `pyexcel-text`_  (write only)json, rst, mediawiki, html
-                    latex, grid, pipe, orgtbl, plain simple
-   ================ ========================================
-
-.. _pyexcel-xls: https://github.com/pyexcel/pyexcel-xls
-.. _pyexcel-xlsx: https://github.com/pyexcel/pyexcel-xlsx
-.. _pyexcel-ods: https://github.com/pyexcel/pyexcel-ods
-.. _pyexcel-ods3: https://github.com/pyexcel/pyexcel-ods3
-.. _pyexcel-text: https://github.com/pyexcel/pyexcel-text
 
 This library makes information processing involving various excel files as easy as
 processing array, dictionary when processing file upload/download, data import into
