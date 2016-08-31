@@ -21,6 +21,7 @@
    {%block more_plugins%}{%endblock%}
    ================= ======================= ============= ==================
 
+.. _pyexcel-io: https://github.com/pyexcel/pyexcel-io
 .. _pyexcel-xls: https://github.com/pyexcel/pyexcel-xls
 .. _pyexcel-xlsx: https://github.com/pyexcel/pyexcel-xlsx
 .. _pyexcel-ods: https://github.com/pyexcel/pyexcel-ods
@@ -28,6 +29,7 @@
 .. _pyexcel-xlsxw: https://github.com/pyexcel/pyexcel-xlsxw
 {%block reference_link%}
 {%endblock%}
+
 .. rubric:: Footnotes
 
 .. [#f1] zipped csv file
