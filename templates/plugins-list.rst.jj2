@@ -2,7 +2,7 @@
 
 {%block more_plugins%}
    `pyexcel-text`_   (write only)json, rst,  tabulate      2.6, 2.7, 3.3, 3.4
-                     mediawiki, html,                      pypy, pypy3
+                     mediawiki, html,                      3.5, pypy, pypy3
                      latex, grid, pipe,
                      orgtbl, plain simple
 {#
