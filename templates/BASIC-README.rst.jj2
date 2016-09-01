@@ -9,8 +9,10 @@
 .. image:: https://codecov.io/github/{{organisation}}/{{name}}/coverage.png
     :target: https://codecov.io/github/{{organisation}}/{{name}}
 
+{%block documentation_link%}
 .. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
    :target: http://{{name|lower}}.readthedocs.org/en/latest/
+{%endblock%}
 
 {%block features %}
 {%endblock%}
@@ -22,7 +24,9 @@
 
 Installation
 ================================================================================
+{%block custom_installation%}
 {%include "installation.rst.jj2" %}
+{%endblock%}
 
 {%block setup%}
 {%endblock%}

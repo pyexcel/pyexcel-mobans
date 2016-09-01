@@ -1,8 +1,22 @@
 {%block pretest%}
 {%endblock%}
 
+{%if external_module_library%}
+  {%set package=external_module_library%}
+{%else%}
+  {%if webframework%}
+    {%set package=webframework + '_excel' %}
+  {%else%}
+    {% if name == nick_name %}
+      {%set package=name%}
+    {%else%}
+      {%set package='pyexcel_' + nick_name%}
+    {%endif%}
+  {%endif%}
+{%endif%}
+
 pip freeze
-nosetests --with-cov --cover-package pyexcel{% if name != nick_name %}_{{nick_name}}{%endif%} --cover-package tests --with-doctest --doctest-extension=.rst tests README.rst {%if webframework%} {{webframework|lower}}_excel {%else%}pyexcel{% if name != nick_name %}_{{nick_name}} {%endif%} {%endif%}&& flake8 . --exclude=.moban.d {%block flake8_options%}--builtins=unicode,xrange,long{%endblock%}
+nosetests --with-cov --cover-package {{package}} --cover-package tests --with-doctest --doctest-extension=.rst tests README.rst {%if not external_module_library%}{{package}}{%endif%} && flake8 . --exclude=.moban.d {%block flake8_options%}--builtins=unicode,xrange,long{%endblock%}
 
 {%block posttest%}
 {%endblock%}

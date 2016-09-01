@@ -1,9 +1,13 @@
+{% if external_module_library %}
+from distutils.core import setup, Extension
+{% else %}
 try:
     from setuptools import setup, find_packages
 except ImportError:
     from ez_setup import use_setuptools
     use_setuptools()
     from setuptools import setup, find_packages
+{%endif%}
 {%block platform_block%}
 from platform import python_implementation
 {%endblock%}
@@ -25,7 +29,6 @@ ENTRY_POINTS = {
     ]
 }
 {% endif %}
-PACKAGES = find_packages(exclude=['ez_setup', 'examples', 'tests'])
 DESCRIPTION = (
 {% for i in range(0, description|length, 70) %}
     '{{ description[i:(70+i)] }}' +
@@ -38,6 +41,17 @@ KEYWORDS = [
     'pyexcel',
     {%block additional_keywords%}
     {%endblock%}
+]
+
+CLASSIFIERS = [
+    'Topic :: Office/Business',
+    'Topic :: Utilities',
+    'Topic :: Software Development :: Libraries',
+    'Programming Language :: Python',
+    'License :: OSI Approved :: BSD License',
+    'Intended Audience :: Developers',
+    {%block additional_classifiers%}
+    {%endblock %}
 ]
 
 {%macro handle_complex_dependency(complex_one) -%}
@@ -70,6 +84,18 @@ INSTALL_REQUIRES = [
   {%   endif %}
 {% endfor %}
 
+{% if external_module_library %}
+PYMODULE = Extension(
+    '{{name}}',
+    sources=[
+{% for source in sources: %}
+        '{{source}}',
+{% endfor %}
+    ],
+    libraries=INSTALL_REQUIRES
+)
+{% else %}
+PACKAGES = find_packages(exclude=['ez_setup', 'examples', 'tests'])
 {% if extra_dependencies or dependencies: %}
 EXTRAS_REQUIRE = {
   {% for dependency in extra_dependencies: %}
@@ -81,17 +107,7 @@ EXTRAS_REQUIRE = {
 {% else: %}
 EXTRAS_REQUIRE = {}
 {% endif %}
-
-CLASSIFIERS = [
-    'Topic :: Office/Business',
-    'Topic :: Utilities',
-    'Topic :: Software Development :: Libraries',
-    'Programming Language :: Python',
-    'License :: OSI Approved :: BSD License',
-    'Intended Audience :: Developers',
-    {%block additional_classifiers%}
-    {%endblock %}
-]
+{% endif %}
 
 
 def read_files(*files):
@@ -115,17 +131,21 @@ if __name__ == '__main__':
         version=VERSION,
         author_email=EMAIL,
         description=DESCRIPTION,
-        install_requires=INSTALL_REQUIRES,
+        long_description=read_files('README.rst', 'CHANGELOG.rst'),
+        license=LICENSE,
         keywords=KEYWORDS,
+{% if external_module_library %}
+        ext_modules=[PYMODULE],
+{% else %}
         extras_require=EXTRAS_REQUIRE,
+        tests_require=['nose'],
+        install_requires=INSTALL_REQUIRES,
         packages=PACKAGES,
         include_package_data=True,
-        long_description=read_files('README.rst', 'CHANGELOG.rst'),
         zip_safe=False,
-        tests_require=['nose'],
-        license=LICENSE,
 {% if command_line_interface %}
         entry_points=ENTRY_POINTS,
 {% endif %}
+{% endif%}
         classifiers=CLASSIFIERS
     )
