@@ -14,10 +14,11 @@
    :target: http://{{name|lower}}.readthedocs.org/en/latest/
 {%endblock%}
 
+{%include "constraints.rst.jj2" %}
+
 {%block features %}
 {%endblock%}
 
-{%include "constraints.rst.jj2" %}
 
 {%block header %}
 {%endblock%}
@@ -33,5 +34,10 @@ Installation
 
 {%block usage%}
 {%endblock%}
+
+Development guide
+================================================================================
+
+{%include "developer_guide.rst.jj2" %}
 
 {%include "license.rst.jj2" %}

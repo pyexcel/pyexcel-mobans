@@ -15,14 +15,7 @@ well as on file system. This library can turn the excel data into a list of list
 a list of records(dictionaries), dictionaries of lists. And vice versa. Hence it
 lets you focus on data in {{webframework}} based web development, instead of file formats.
 
-The idea originated from the common usability problem when developing an excel file
-driven web applications for non-technical office workers: such as office assistant,
-human resource administrator. The fact is that not all people know the
-difference among various excel formats: csv, xls, xlsx. Instead of training those people
-about file formats, this library helps web developers to handle most of the excel file
-formats by providing a common programming interface. To add a specific excel file format
-to you application, all you need is to install an extra pyexcel plugin. No code change
-to your application.
+{% include "origin.rst.jj2" %}
 
 The highlighted features are:
 
