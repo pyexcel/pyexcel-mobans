@@ -1,7 +1,10 @@
 {%extends "io-plugins-list.rst.jj2"%}
 
 {%block more_plugins%}
-   `pyexcel-text`_   (write only)json, rst,  tabulate      2.6, 2.7, 3.3, 3.4
+{#
+   ================= ======================= ============= ==================
+#}
+   `pyexcel-text`_   (write only)json, rst,  `tabulate`_   2.6, 2.7, 3.3, 3.4
                      mediawiki, html,                      3.5, pypy, pypy3
                      latex, grid, pipe,
                      orgtbl, plain simple
@@ -12,4 +15,5 @@
 
 {%block reference_link%}
 .. _pyexcel-text: https://github.com/pyexcel/pyexcel-text
+.. _tabulate: https://bitbucket.org/astanin/python-tabulate
 {%endblock%}
