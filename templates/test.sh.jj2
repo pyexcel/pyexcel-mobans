@@ -16,7 +16,7 @@
 {%endif%}
 
 pip freeze
-nosetests --with-cov --cover-package {{package}} --cover-package tests --with-doctest --doctest-extension=.rst tests README.rst {%if not external_module_library%}{{package}}{%endif%} && flake8 . --exclude=.moban.d {%block flake8_options%}--builtins=unicode,xrange,long{%endblock%}
+nosetests --with-cov --cover-package {{package}} --cover-package tests --with-doctest --doctest-extension=.rst tests README.rst docs/source {%if not external_module_library%}{{package}}{%endif%} && flake8 . --exclude=.moban.d {%block flake8_options%}--builtins=unicode,xrange,long{%endblock%}
 
 {%block posttest%}
 {%endblock%}
