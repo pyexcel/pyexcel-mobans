@@ -14,7 +14,9 @@
    :target: http://{{name|lower}}.readthedocs.org/en/latest/
 {%endblock%}
 
+{%block constraint%}
 {%include "constraints.rst.jj2" %}
+{%endblock%}
 
 {%block features %}
 {%endblock%}
