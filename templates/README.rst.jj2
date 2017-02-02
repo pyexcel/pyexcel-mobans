@@ -24,9 +24,6 @@ Usage
 As a standalone library
 --------------------------------------------------------------------------------
 
-Write to an {{file_type}} file
-********************************************************************************
-
 .. testcode::
    :hide:
 
@@ -42,6 +39,12 @@ Write to an {{file_type}} file
     ... else:
     ...     from collections import OrderedDict
 
+{% block write_to_file %}
+
+Write to an {{file_type}} file
+********************************************************************************
+
+
 
 Here's the sample code to write a dictionary to an {{file_type}} file:
 
@@ -52,6 +55,8 @@ Here's the sample code to write a dictionary to an {{file_type}} file:
     >>> data.update({"Sheet 1": [[1, 2, 3], [4, 5, 6]]})
     >>> data.update({"Sheet 2": [["row 1", "row 2", "row 3"]]})
     >>> save_data("your_file.{{file_type}}", data)
+
+{% endblock %}
 
 {%block read_from_file %}
 Read from an {{file_type}} file
@@ -69,6 +74,7 @@ Here's the sample code:
 
 {%endblock%}
 
+{% block write_to_memory %}
 Write an {{file_type}} to memory
 ********************************************************************************
 
@@ -86,6 +92,8 @@ Here's the sample code to write a dictionary to an {{file_type}} file:
     >>> # In reality, you might give it to your http response
     >>> # object for downloading
 
+
+{%endblock%}
 
 {%block middle_block %}
 {%endblock%}
@@ -110,11 +118,6 @@ Continue from previous example:
 {%block pagination%}
 Pagination feature
 ********************************************************************************
-
-Special notice 30/01/2017: due to the constraints of the underlying 3rd party
-library, it will read the whole file before returning the paginated data. So
-at the end of day, the only benefit is less data returned from the reading
-function. No major performance improvement will be seen.
 
 Let's assume the following file is a huge {{file_type}} file:
 
@@ -173,16 +176,6 @@ No longer, explicit import is needed since pyexcel version 0.2.2. Instead,
 this library is auto-loaded. So if you want to read data in {{file_type}} format,
 installing it is enough.
 
-Any version under pyexcel 0.2.2, you have to keep doing the following:
-
-Import it in your file to enable this plugin:
-
-.. code-block:: python
-
-    from pyexcel.ext import {{nick_name}}
-
-Please note only pyexcel version 0.0.4+ support this.
-
 {%block read_from_file_via_pyexcel %}
 
 Reading from an {{file_type}} file
@@ -193,7 +186,6 @@ Here is the sample code:
 .. code-block:: python
 
     >>> import pyexcel as pe
-    >>> # from pyexcel.ext import {{nick_name}}
     >>> sheet = pe.get_book(file_name="your_file.{{file_type}}")
     >>> sheet
     Sheet 1:
@@ -209,6 +201,7 @@ Here is the sample code:
 
 {%endblock%}
 
+{% block pyexcel_write_to_file%}
 Writing to an {{file_type}} file
 ********************************************************************************
 
@@ -217,6 +210,7 @@ Here is the sample code:
 .. code-block:: python
 
     >>> sheet.save_as("another_file.{{file_type}}")
+{% endblock %}
 
 {%block read_from_memory_via_pyexcel %}
 
@@ -249,6 +243,7 @@ You got to wrap the binary content with stream to get {{file_type}} working:
 
 {%endblock%}
 
+{% block pyexcel_write_to_memory%}
 Writing to a StringIO instance
 ********************************************************************************
 
@@ -266,6 +261,8 @@ You need to pass a StringIO instance to Writer:
     >>> # then do something with io
     >>> # In reality, you might give it to your http response
     >>> # object for downloading
+{% endblock %}
+
 
 {%include "license.rst.jj2" %}
 
