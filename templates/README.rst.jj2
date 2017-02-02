@@ -119,6 +119,10 @@ Continue from previous example:
 Pagination feature
 ********************************************************************************
 
+{% block pagination_note %}
+
+{% endblock%}
+
 Let's assume the following file is a huge {{file_type}} file:
 
 .. code-block:: python
