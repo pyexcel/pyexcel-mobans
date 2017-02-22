@@ -74,6 +74,7 @@ class TestAutoDetectInt(TestCase):
         +---+---+-----+""").strip()
         self.assertEqual(str(book), expected)
 
+{% block xlsx_exception %}
     def test_auto_detect_int_false(self):
         sheet = pe.get_sheet(file_name=self.test_file, auto_detect_int=False)
         expected = dedent("""
@@ -92,5 +93,6 @@ class TestAutoDetectInt(TestCase):
         +-----+-----+-----+""").strip()
         self.assertEqual(str(book), expected)
 
+{% endblock %}
     def tearDown(self):
         os.unlink(self.test_file)

@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+{%block additional_imports%}
+{%endblock%}
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
@@ -29,15 +31,19 @@ html_static_path = ['_static']
 htmlhelp_basename = '{{name}}doc'
 latex_elements = {}
 latex_documents = [
-    ('index', '{{name}}.tex', u'{{name}} Documentation',
+    ('index', '{{name}}.tex',
+     '{{name}} Documentation',
      '{{company}}', 'manual'),
 ]
 man_pages = [
-    ('index', '{{name}}', u'{{name}} Documentation',
+    ('index', '{{name}}',
+     '{{name}} Documentation',
      [u'{{company}}'], 1)
 ]
 texinfo_documents = [
-    ('index', '{{name}}', u'{{name}} Documentation',
-     '{{company}}', '{{name}}', 'One line description of project.',
+    ('index', '{{name}}',
+     '{{name}} Documentation',
+     '{{company}}', '{{name}}',
+     '{{description}}',
      'Miscellaneous'),
 ]

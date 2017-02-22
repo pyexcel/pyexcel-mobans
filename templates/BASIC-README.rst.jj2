@@ -42,4 +42,7 @@ Development guide
 
 {%include "developer_guide.rst.jj2" %}
 
+{%block custom_guide %}
+{%endblock%}
+
 {%include "license.rst.jj2" %}
