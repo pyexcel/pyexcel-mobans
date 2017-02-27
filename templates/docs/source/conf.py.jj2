@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 {%block additional_imports%}
 {%endblock%}
+DESCRIPTION = (
+{% for i in range(0, description|length, 70) %}
+    '{{ description[i:(70+i)] }}' +
+{% endfor %}
+    ''
+)
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
@@ -10,9 +16,10 @@ extensions = [
 {%endblock%}
 ]
 
+{%if 'excel' in name%}
 intersphinx_mapping = {
     'pyexcel': ('http://pyexcel.readthedocs.org/en/latest/', None)
-}
+{%endif%}
 spelling_word_list_filename = 'spelling_wordlist.txt'
 templates_path = ['_templates']
 source_suffix = '.rst'
@@ -44,6 +51,6 @@ texinfo_documents = [
     ('index', '{{name}}',
      '{{name}} Documentation',
      '{{company}}', '{{name}}',
-     '{{description}}',
+     DESCRIPTION,
      'Miscellaneous'),
 ]
