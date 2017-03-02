@@ -10,7 +10,7 @@
       {%set package=misc %}
     {%else%}
       {%if command_line_interface%}
-        {%set package=command_line_interface %}
+        {%set package=command_line_interface + '_cli' %}
       {%else%}
         {% if name == nick_name %}
           {%set package=name%}
