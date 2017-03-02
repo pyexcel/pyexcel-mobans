@@ -11,9 +11,9 @@ def create_sample_file1(file):
     table.append(data[4:8])
     table.append(data[8:12])
     pyexcel.save_as(array=table, dest_file_name=file)
-
-
 {%block writer_test%}
+
+
 class PyexcelHatWriterBase:
     """
     Abstract functional test for hat writers
