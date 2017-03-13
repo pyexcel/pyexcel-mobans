@@ -3,22 +3,22 @@
 
 .. table:: A list of file formats supported by external plugins
 
-   ================= ======================= ============= ==================
-   Package name      Supported file formats  Dependencies  Python versions
-   ================= ======================= ============= ==================
-   `pyexcel-io`_     csv, csvz [#f1]_, tsv,                2.6, 2.7, 3.3,
-                     tsvz [#f2]_                           3.4, 3.5, 3.6
-                                                           pypy
-   `pyexcel-xls`_    xls, xlsx(read only),   `xlrd`_,      same as above
-                     xlsm(read only)         `xlwt`_
-   `pyexcel-xlsx`_   xlsx                    `openpyxl`_   same as above
-   `pyexcel-xlsxw`_  xlsx(write only)        `XlsxWriter`_ same as above
-   `pyexcel-ods3`_   ods                     `ezodf`_,     2.6, 2.7, 3.3, 3.4
-                                             lxml          3.5, 3.6
-   `pyexcel-ods`_    ods                     `odfpy`_      same as above
-   `pyexcel-odsr`_   ods(read only)          lxml          same as above
+   ======================== ======================= =============== ==================
+   Package name              Supported file formats  Dependencies   Python versions
+   ======================== ======================= =============== ==================
+   `pyexcel-io`_            csv, csvz [#f1]_, tsv,                  2.6, 2.7, 3.3,
+                            tsvz [#f2]_                             3.4, 3.5, 3.6
+                                                                    pypy
+   `pyexcel-xls`_           xls, xlsx(read only),   `xlrd`_,        same as above
+                            xlsm(read only)         `xlwt`_
+   `pyexcel-xlsx`_          xlsx                    `openpyxl`_     same as above
+   `pyexcel-xlsxw`_         xlsx(write only)        `XlsxWriter`_   same as above
+   `pyexcel-ods3`_          ods                     `ezodf`_,       2.6, 2.7, 3.3, 3.4
+                                                    lxml            3.5, 3.6
+   `pyexcel-ods`_           ods                     `odfpy`_        same as above
+   `pyexcel-odsr`_          ods(read only)          lxml            same as above
    {%block more_plugins%}{%endblock%}
-   ================= ======================= ============= ==================
+   ======================== ======================= =============== ==================
 
 .. _pyexcel-io: https://github.com/pyexcel/pyexcel-io
 .. _pyexcel-xls: https://github.com/pyexcel/pyexcel-xls
