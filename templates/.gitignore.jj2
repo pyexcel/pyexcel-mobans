@@ -91,5 +91,6 @@ ENV/
 .ropeproject
 *~
 commons/
+.moban.hashes
 {%block extra%}
 {%endblock%}
