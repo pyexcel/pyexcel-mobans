@@ -2,11 +2,7 @@
 {{name}} - Let you focus on data, instead of {{file_type}} format
 ================================================================================
 
-.. image:: https://api.travis-ci.org/pyexcel/{{name}}.png
-    :target: http://travis-ci.org/pyexcel/{{name}}
-
-.. image:: https://codecov.io/github/pyexcel/{{name}}/coverage.png
-    :target: https://codecov.io/github/pyexcel/{{name}}
+{%include "badges.rst..jj2" %}
 
 {%block description %}
 {%endblock %}

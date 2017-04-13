@@ -3,16 +3,7 @@
 {%endblock%}
 ================================================================================
 
-.. image:: https://api.travis-ci.org/{{organisation}}/{{name}}.svg?branch=master
-   :target: http://travis-ci.org/{{organisation}}/{{name}}
-
-.. image:: https://codecov.io/github/{{organisation}}/{{name}}/coverage.png
-    :target: https://codecov.io/github/{{organisation}}/{{name}}
-
-{%block documentation_link%}
-.. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
-   :target: http://{{name|lower}}.readthedocs.org/en/latest/
-{%endblock%}
+{%include "badges.rst.jj2" %}
 
 {%block constraint%}
 {%include "constraints.rst.jj2" %}
@@ -46,3 +37,5 @@ Development guide
 {%endblock%}
 
 {%include "license.rst.jj2" %}
+
+{%include "support.rst.jj2" %}
