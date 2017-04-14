@@ -38,4 +38,7 @@ Development guide
 
 {%include "license.rst.jj2" %}
 
+Support the project
+================================================================================
+
 {%include "support.rst.jj2" %}

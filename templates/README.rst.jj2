@@ -2,7 +2,7 @@
 {{name}} - Let you focus on data, instead of {{file_type}} format
 ================================================================================
 
-{%include "badges.rst..jj2" %}
+{%include "badges.rst.jj2" %}
 
 {%block description %}
 {%endblock %}
@@ -280,3 +280,8 @@ Developer guide
    >>> import os
    >>> os.unlink("your_file.{{file_type}}")
    >>> os.unlink("another_file.{{file_type}}")
+
+Support the project
+================================================================================
+
+{%include "support.rst.jj2" %}

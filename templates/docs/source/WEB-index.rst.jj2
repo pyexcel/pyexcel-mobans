@@ -27,6 +27,13 @@ Setup
 {%block quick_start%}
 {%endblock%}
 
+
+Support the project
+-----------------------
+
+{%include "support.rst.jj2" %}
+
+
 More excel file formats
 ------------------------
 
