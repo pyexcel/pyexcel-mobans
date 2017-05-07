@@ -4,6 +4,11 @@
 
 {%include "badges.rst.jj2" %}
 
+{%block documentation_link%}
+.. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
+   :target: http://{{name|lower}}.readthedocs.org/en/latest/
+{%endblock%}
+
 {%block description %}
 {%endblock %}
 

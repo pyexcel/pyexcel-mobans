@@ -6,8 +6,3 @@
 
 .. image:: https://codecov.io/github/{{organisation}}/{{name}}/coverage.png
    :target: https://codecov.io/github/{{organisation}}/{{name}}
-
-{%block documentation_link%}
-.. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
-   :target: http://{{name|lower}}.readthedocs.org/en/latest/
-{%endblock%}
