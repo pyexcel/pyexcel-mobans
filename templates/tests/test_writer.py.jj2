@@ -1,5 +1,6 @@
 import os
-from pyexcel_{{nick_name}}.{{file_type}} import {{file_type|upper}}Writer as Writer, {{file_type|upper}}Book as Reader
+from pyexcel_{{nick_name}}.{{file_type}}w import {{file_type|upper}}Writer as Writer
+from pyexcel_{{nick_name}}.{{file_type}}r import {{file_type|upper}}Book as Reader
 from base import PyexcelWriterBase, PyexcelHatWriterBase
 
 
@@ -18,10 +19,10 @@ class TestNative{{file_type|upper}}Writer:
         reader = Reader()
         reader.open(self.testfile)
         content = reader.read_all()
-        reader.close()
         for key in content.keys():
             content[key] = list(content[key])
         assert content == self.content
+        reader.close()
 
     def tearDown(self):
         if os.path.exists(self.testfile):
