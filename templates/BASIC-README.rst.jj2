@@ -5,6 +5,11 @@
 
 {%include "badges.rst.jj2" %}
 
+{%block documentation_link%}
+.. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
+   :target: http://{{name|lower}}.readthedocs.org/en/latest/
+{%endblock%}
+
 {%block constraint%}
 {%include "constraints.rst.jj2" %}
 {%endblock%}

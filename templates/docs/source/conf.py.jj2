@@ -16,11 +16,13 @@ extensions = [
 {%endblock%}
 ]
 
-{%if 'excel' in name%}
 intersphinx_mapping = {
-    'pyexcel': ('http://pyexcel.readthedocs.org/en/latest/', None)
-}
+{%if 'excel' in name and name != 'pyexcel'%}
+    'pyexcel': ('http://pyexcel.readthedocs.org/en/latest/', None),
 {%endif%}
+{%block additional_mapping%}
+{%endblock%}
+}
 spelling_word_list_filename = 'spelling_wordlist.txt'
 templates_path = ['_templates']
 source_suffix = '.rst'
