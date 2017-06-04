@@ -19,6 +19,11 @@ Installation
 
 {%include "installation.rst.jj2" %}
 
+Support the project
+================================================================================
+
+{%include "support.rst.jj2" %}
+
 Usage
 ================================================================================
 
@@ -285,8 +290,3 @@ Developer guide
    >>> import os
    >>> os.unlink("your_file.{{file_type}}")
    >>> os.unlink("another_file.{{file_type}}")
-
-Support the project
-================================================================================
-
-{%include "support.rst.jj2" %}

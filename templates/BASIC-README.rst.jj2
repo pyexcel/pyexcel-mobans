@@ -33,6 +33,11 @@ Installation
 {%block usage%}
 {%endblock%}
 
+Support the project
+================================================================================
+
+{%include "support.rst.jj2" %}
+
 Development guide
 ================================================================================
 
@@ -42,8 +47,3 @@ Development guide
 {%endblock%}
 
 {%include "license.rst.jj2" %}
-
-Support the project
-================================================================================
-
-{%include "support.rst.jj2" %}
