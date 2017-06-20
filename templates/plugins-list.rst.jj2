@@ -9,7 +9,7 @@
                             latex, grid, pipe,
                             orgtbl, plain simple
    `pyexcel-handsontable`_  handsontable in html    `handsontable`_ same as above
-   `pyexcel-chart`_         svg chart               `pygal`_        same as above
+   `pyexcel-pygal`_         svg chart               `pygal`_        same as above [#f3]_
 {#
    ======================== ======================= =============== ==================
 #}
@@ -20,6 +20,10 @@
 .. _tabulate: https://bitbucket.org/astanin/python-tabulate
 .. _pyexcel-handsontable: https://github.com/pyexcel/pyexcel-handsontable
 .. _handsontable: https://cdnjs.com/libraries/handsontable
-.. _pyexcel-chart: https://github.com/pyexcel/pyexcel-chart
+.. _pyexcel-pygal: https://github.com/pyexcel/pyexcel-chart
 .. _pygal: https://github.com/Kozea/pygal
+.. _pyexcel-matplotlib: https://github.com/pyexcel/pyexcel-matplotlib
+.. _matplotlib: https://matplotlib.org
+
+.. [#f3] coming soon
 {%endblock%}
