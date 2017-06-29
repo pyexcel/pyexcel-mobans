@@ -19,7 +19,7 @@ PY26 = PY2 and sys.version_info[1] < 7
 
 NAME = '{{name}}'
 AUTHOR = '{{author}}'
-VERSION = '{{version}}'
+VERSION = '{{current_version}}'
 EMAIL = '{{contact}}'
 LICENSE = '{{license}}'
 {% if command_line_interface %}
