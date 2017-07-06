@@ -6,3 +6,6 @@
 
 .. image:: https://codecov.io/github/{{organisation}}/{{name}}/coverage.png
    :target: https://codecov.io/github/{{organisation}}/{{name}}
+
+.. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
+   :target: https://gitter.im/pyexcel/Lobby
