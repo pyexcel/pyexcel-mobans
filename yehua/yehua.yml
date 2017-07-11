@@ -1,3 +1,6 @@
+introduction: |
+  Yehua will walk you through creating a pyexcel package.
+  Press ^C to quit at any time.
 configuration:
   template_path: ./templates
   static_path: ./static
@@ -32,4 +35,4 @@ static:
   - ".moban.d/docs/source/conf.py": "docs/source/conf.py.jj2"
   - Makefile: Makefile
   - CHANGELOG.rst: CHANGELOG.rst
-  - "{{project_src}}/__init__.py": __init__.py.jj2
+  - "{{project_name|lower|replace('-', '_')}}/__init__.py": __init__.py.jj2
