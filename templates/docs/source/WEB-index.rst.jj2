@@ -28,6 +28,10 @@ Setup
 {%endblock%}
 
 
+{%block verified_frameworks %}
+{%endblock%}
+
+
 Support the project
 -----------------------
 
