@@ -1,0 +1,6 @@
+{% extends 'gitignore.jj2' %}
+
+{%block extra%}
+docs/build/
+commons
+{%endblock%}
