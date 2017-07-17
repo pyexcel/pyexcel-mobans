@@ -4,5 +4,5 @@
 {%endblock%}
 
 {%block features %}
-**{{name}}** does xyz.
+**{{name}}** does {{description}}.
 {%endblock%}
