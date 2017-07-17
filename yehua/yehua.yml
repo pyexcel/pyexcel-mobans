@@ -15,6 +15,7 @@ questions:
         - cli: "What is the name of cli executable?"
       "3. python's C externsion": "N/A"
 layout:
+  - "{{project_name|lower|replace('-', '_')}}"
   - tests
   - docs:
     - source

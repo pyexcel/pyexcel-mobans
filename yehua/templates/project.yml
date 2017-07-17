@@ -1,5 +1,5 @@
 overrides: "pyexcel.yaml"
-name: "{{project}}"
+name: "{{project_name}}"
 nick_name: "{{nickname}}"
 version: "0.0.1"
 release: "0.0.1"
