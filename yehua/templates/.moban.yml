@@ -17,3 +17,4 @@ targets:
   - .travis.yml: travis.yml.jj2
   - .gitignore: gitignore.jj2
   - "docs/source/conf.py": "docs/source/conf.py.jj2"
+  - "{{project_name|lower|replace('-', '_')}}/_version.py": version.py.jj2

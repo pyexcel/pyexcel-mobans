@@ -26,7 +26,6 @@ layout:
 templates:
   - "{{project_name}}.yml": project.yml
   - .moban.yml: .moban.yml
-  - "{{project_name|lower|replace('-', '_')}}/_version.py": version.py.jj2
   - "{{project_name|lower|replace('-', '_')}}/__init__.py": __init__.py.jj2
 static:
   - ".moban.d/README.rst": "README.rst"
@@ -36,6 +35,7 @@ static:
   - ".moban.d/setup.py": setup.py.jj2
   - ".moban.d/tests/requirements.txt": "tests/requirements.txt"
   - ".moban.d/docs/source/conf.py": "docs/source/conf.py.jj2"
+  - ".moban.d/version.py.jj2": version.py.jj2
   - "docs/requirements.txt": "docs/requirements.txt"
   - Makefile: Makefile
   - CHANGELOG.rst: CHANGELOG.rst
