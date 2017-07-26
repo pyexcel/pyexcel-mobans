@@ -16,7 +16,7 @@
    `pyexcel-ods3`_          ods                     `ezodf`_,       2.6, 2.7, 3.3, 3.4
                                                     lxml            3.5, 3.6
    `pyexcel-ods`_           ods                     `odfpy`_        same as above
-   `pyexcel-odsr`_          ods(read only)          lxml            same as above
+   `pyexcel-odsr`_          read only for ods, fods lxml            same as above
    `pyexcel-htmlr`_         html(read only)         lxml,html5lib   same as above
    {%block more_plugins%}{%endblock%}
    ======================== ======================= =============== ==================
