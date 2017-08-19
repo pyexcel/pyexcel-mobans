@@ -8,3 +8,4 @@ contact: wangc_2011@hotmail.com
 license: New BSD
 company: Onni Software Ltd.
 branch: master
+include_doctest: true
