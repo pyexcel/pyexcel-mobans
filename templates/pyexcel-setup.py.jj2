@@ -1,0 +1,8 @@
+{% extends 'setup.py.jj2' %}
+
+{% block additional_classifiers %}
+    'License :: OSI Approved :: BSD License',
+{% block pyexcel_extra_classifiers %}
+{% endblock %}
+{% endblock %}
+
