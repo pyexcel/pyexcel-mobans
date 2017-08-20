@@ -4,6 +4,6 @@ notifications:
   email: false
 install:
   - pip install -r test_requirements.txt
+  - git clone https://github.com/moremoban/setupmobans.git
 script:
-  - find templates/ -type f -exec echo '{}' \;|sed -e "s/templates\//{%include \"/" -e "s/$/\" %}/" > test.file
-  - moban -c config/pyexcel.yaml -t test.file -td templates .
+  - bash test.sh
