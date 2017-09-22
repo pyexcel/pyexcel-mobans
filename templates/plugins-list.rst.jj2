@@ -1,9 +1,12 @@
 {%extends "io-plugins-list.rst.jj2"%}
 
 {%block more_plugins%}
-{#
+.. table:: Other data renderers
+
    ======================== ======================= ================= ==================
-#}
+   Package name              Supported file formats  Dependencies     Python versions
+   ======================== ======================= ================= ==================
+
    `pyexcel-text`_          write only:rst,         `tabulate`_       2.6, 2.7, 3.3, 3.4
                             mediawiki, html,                          3.5, 3.6, pypy
                             latex, grid, pipe,
@@ -16,12 +19,8 @@
    `pyexcel-sortable`_      sortable table in html  `csvtotable`_     same as above
    `pyexcel-gantt`_         gantt chart in html     `frappe-gantt`_   except pypy, same
                                                                       as above
-{#
    ======================== ======================= ================= ==================
-#}
-{%endblock%}
 
-{%block reference_link%}
 .. _pyexcel-text: https://github.com/pyexcel/pyexcel-text
 .. _tabulate: https://bitbucket.org/astanin/python-tabulate
 .. _pyexcel-handsontable: https://github.com/pyexcel/pyexcel-handsontable
@@ -35,3 +34,5 @@
 .. _pyexcel-gantt: https://github.com/pyexcel/pyexcel-gantt
 .. _frappe-gantt: https://github.com/frappe/gantt
 {%endblock%}
+
+
