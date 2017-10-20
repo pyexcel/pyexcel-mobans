@@ -1,4 +1,0 @@
-include README.rst
-include CHANGELOG.rst
-{%block more_options%}
-{%endblock%}
