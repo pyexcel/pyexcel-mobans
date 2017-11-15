@@ -14,6 +14,9 @@ questions:
       "2. command line interface":
         - cli: "What is the name of cli executable?"
       "3. python's C externsion": "N/A"
+mobans:
+  - 'setupmobans': https://github.com/moremoban/setupmobans.git
+  - 'commons': https://github.com/pyexcel/pyexcel-commons.git
 layout:
   - "{{project_name|lower|replace('-', '_')}}"
   - tests
