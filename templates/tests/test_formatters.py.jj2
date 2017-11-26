@@ -30,8 +30,8 @@ class TestDateFormat:
         value = r[4, 0].isoformat()
         eq_(value, "1899-12-30T00:00:00")
         eq_(r[4, 1].isoformat(), "1899-12-30T00:00:00")
-{% endif %}
-{% block write_date_format %}
+{% endif %}{% block write_date_format %}
+
     def test_writing_date_format(self):
         import datetime
         excel_filename = "testdateformat.{{file_type}}"
