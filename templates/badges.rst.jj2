@@ -1,7 +1,7 @@
 .. image:: https://raw.githubusercontent.com/pyexcel/pyexcel.github.io/master/images/patreon.png
    :target: https://www.patreon.com/pyexcel
 
-.. image:: https://api.travis-ci.org/{{organisation}}/{{name}}.svg?branch={{branch}}
+.. image:: https://travis-ci.org/{{organisation}}/{{name}}.svg?branch={{branch}}
    :target: http://travis-ci.org/{{organisation}}/{{name}}
 
 .. image:: https://codecov.io/gh/{{organisation}}/{{name}}/branch/master/graph/badge.svg
