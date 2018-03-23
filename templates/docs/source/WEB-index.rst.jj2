@@ -7,6 +7,9 @@
 
 {%include "WEB-features.rst.jj2" %}
 
+{% block further_dissertation %}
+{% endblock %}
+
 Installation
 -------------------
 
