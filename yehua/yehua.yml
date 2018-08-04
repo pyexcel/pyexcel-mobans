@@ -10,7 +10,7 @@ questions:
   - project_type:
     - question: "What is project type?"
       "1. pyexcel plugins":
-        - nickname: "What is the nick name?"
+        - nick_name: "What is the nick name?"
       "2. command line interface":
         - cli: "What is the name of cli executable?"
       "3. python's C externsion": "N/A"
@@ -45,3 +45,23 @@ static:
   - Makefile: Makefile
   - CHANGELOG.rst: CHANGELOG.rst
   - setup.cfg: setup.cfg
+post-moban:
+  git-repo-files:
+    - "CHANGELOG.rst"
+    - "MANIFEST.in"
+    - "Makefile"
+    - "README.rst"
+    - "{{project_name}}.yml"
+    - "{{project_name | replace('-', '_')}}"
+    - "docs"
+    - "requirements.txt"
+    - "setup.cfg"
+    - "setup.py"
+    - "test.sh"
+    - "tests"
+    - ".gitignore"
+    - ".moban.d"
+    - ".travis.yml"
+    - ".moban.yml"
+    - "test.bat"
+    - "LICENSE"

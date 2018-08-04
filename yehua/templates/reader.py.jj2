@@ -1,5 +1,5 @@
 """
-    {{project | replace('-', '_')}}
+    {{project_name | replace('-', '_')}}
     ~~~~~~~~~~~~~~~~~~~
     The lower level {{nick_name}} file format handler
     :copyright: (c) 2018 by {{company}} & its contributors

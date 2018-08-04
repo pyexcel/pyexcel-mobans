@@ -1,9 +1,9 @@
 """
-    {{project | replace('-', '_')}}
+    {{project_name | replace('-', '_')}}
     ~~~~~~~~~~~~~~~~~~~
     The lower level {{nick_name}} file format handler
-    :copyright: (c) 2018 by {{company}} & its contributors
-    :license: {{license}} License
+    :copyright: (c) 2018 by Onni Software Ltd. & its contributors
+    :license: New BSD License
 """
 from pyexcel_io.book import BookWriter
 from pyexcel_io.sheet import SheetWriter
