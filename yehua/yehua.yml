@@ -30,6 +30,8 @@ templates:
   - "{{project_name}}.yml": project.yml
   - .moban.yml: .moban.yml
   - "{{project_name|lower|replace('-', '_')}}/__init__.py": __init__.py.jj2
+  - "{{project_name|lower|replace('-', '_')}}/{{nick_name|lower}}r.py": reader.py.jj2
+  - "{{project_name|lower|replace('-', '_')}}/{{nick_name|lower}}w.py": writer.py.jj2
 static:
   - ".moban.d/README.rst": "README.rst"
   - ".moban.d/test.bat": "test.bat"

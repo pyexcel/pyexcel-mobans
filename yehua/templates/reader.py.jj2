@@ -1,0 +1,53 @@
+"""
+    {{project | replace('-', '_')}}
+    ~~~~~~~~~~~~~~~~~~~
+    The lower level {{nick_name}} file format handler
+    :copyright: (c) 2018 by {{company}} & its contributors
+    :license: {{license}} License
+"""
+from pyexcel_io._compact import OrderedDict
+from pyexcel_io.book import BookReader
+from pyexcel_io.sheet import SheetReader
+
+
+class {{nick_name|upper}}Sheet(SheetReader):
+    def __init__(self, sheet, auto_detect_int=True,
+                 auto_detect_float=True,
+                 auto_detect_datetime=True,
+                 **keywords):
+        SheetReader.__init__(self, sheet, **keywords)
+        self.__auto_detect_int = auto_detect_int
+        self.__auto_detect_float = auto_detect_float
+        self.__auto_detect_datetime = auto_detect_datetime
+
+    @property
+    def name(self):
+        return self._native_sheet.name
+
+    def row_iterator(self):
+        pass
+
+    def column_iterator(self, row):
+        pass
+
+
+
+class {{nick_name|upper}}Book(BookReader):
+    def open(self, file_name, **keywords):
+        BookReader.open(self, file_name, **keywords)
+        # your code
+
+    def open_stream(self, file_stream, **keywords):
+        pass
+
+    def read_sheet_by_name(self, sheet_name):
+        pass
+
+    def read_sheet_by_index(self, sheet_index):
+        pass
+
+    def read_all(self):
+        pass
+
+    def read_sheet(self, native_sheet):
+        pass

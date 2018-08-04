@@ -47,9 +47,9 @@ class TestDateFormat:
         assert isinstance(r[0, 2], datetime.date) is True
         assert r[0, 2].strftime("%d/%m/%y %H:%M:%S") == "25/12/14 11:11:11"
         os.unlink(excel_filename)
+
+
 {% endblock %}{% endblock %}
-
-
 class TestAutoDetectInt:
     def setUp(self):
         self.content = [[1, 2, 3.1]]
