@@ -38,7 +38,7 @@ class {{nick_name|upper}}Writer(BookWriter):
         pass
 
     def create_sheet(self, name):
-        return XLSXSheetWriter(self._native_book,
+        return {{nick_name|upper}}SheetWriter(self._native_book,
                                self._native_book.add_worksheet(name), name)
 
     def close(self):
