@@ -11,3 +11,8 @@ company: Onni Software Ltd.
 branch: master
 include_doctest: true
 scm_host: github.com
+extensions:
+  - 'sphinx.ext.autodoc'
+  - 'sphinx.ext.doctest'
+  - 'sphinx.ext.intersphinx'
+  - 'sphinx.ext.viewcode'
