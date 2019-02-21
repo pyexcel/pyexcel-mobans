@@ -17,4 +17,4 @@ extensions:
   - 'sphinx.ext.intersphinx'
   - 'sphinx.ext.viewcode'
 master: index
-language: en
+language: Python
