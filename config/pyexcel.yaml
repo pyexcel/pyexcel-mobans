@@ -18,3 +18,4 @@ extensions:
   - 'sphinx.ext.viewcode'
 master: index
 language: Python
+lint_command: make lint
