@@ -3,7 +3,7 @@
 {%endblock%}
 ================================================================================
 
-{%include "badges.rst.jj2" %}
+{%include "pyexcel-badges.rst.jj2" %}
 
 {%block documentation_link%}
 .. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
