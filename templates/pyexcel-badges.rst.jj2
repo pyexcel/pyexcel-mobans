@@ -10,5 +10,8 @@
 .. image:: https://codecov.io/gh/{{organisation}}/{{name}}/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/{{organisation}}/{{name}}
 
+.. image:: https://pepy.tech/badge/{{name}}/month
+   :target: https://pepy.tech/project/{{name}}/month
+
 .. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
    :target: https://gitter.im/pyexcel/Lobby
