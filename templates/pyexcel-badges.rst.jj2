@@ -7,22 +7,22 @@
 .. image:: https://codecov.io/gh/{{organisation}}/{{name}}/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/{{organisation}}/{{name}}
 
-{% if relase!='0.0.0' %}
+{% if release!='0.0.0' %}
 .. image:: https://badge.fury.io/py/{{name}}.svg
    :target: https://pypi.org/project/{{name}}
 {% endif %}
 
-{% if no_conda %}
+{% if is_on_conda %}
 .. image:: https://anaconda.org/conda-forge/{{name}}/badges/version.svg
    :target: https://anaconda.org/conda-forge/{{name}}
 {% endif %}
 
-{% if relase!='0.0.0' %}
+{% if release!='0.0.0' %}
 .. image:: https://pepy.tech/badge/{{name}}/month
    :target: https://pepy.tech/project/{{name}}/month
 {% endif %}
 
-{% if no_conda %}
+{% if is_on_conda %}
 .. image:: https://anaconda.org/conda-forge/{{name}}/badges/downloads.svg
    :target: https://anaconda.org/conda-forge/{{name}}
 {% endif %}
