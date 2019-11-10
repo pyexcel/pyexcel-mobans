@@ -7,7 +7,6 @@ configuration:
   - ".moban.d"
 targets:
   - requirements.txt: requirements.txt.jj2
-  - min_requirements.txt: minimum_requirements.txt
   - "tests/requirements.txt": "tests/custom_requirements.txt.jj2"
   - test.sh: test.sh.jj2
   - test.bat: test.bat.jj2
