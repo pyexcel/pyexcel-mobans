@@ -3,6 +3,7 @@ name: pyexcel
 nick_name: pyexcel
 copyright: copyright 2015-2019 Onni Software Ltd.
 file_type: file type
+copyright_year: 2015-2019
 author: C.W.
 organisation: pyexcel
 contact: info@pyexcel.org
