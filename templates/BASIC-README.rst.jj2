@@ -5,15 +5,15 @@
 
 {%include "pyexcel-badges.rst.jj2" %}
 
-Support the project
-================================================================================
-
-{%include "support.rst.jj2" %}
-
 {%block documentation_link%}
 .. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
    :target: http://{{name|lower}}.readthedocs.org/en/latest/
 {%endblock%}
+
+Support the project
+================================================================================
+
+{%include "support.rst.jj2" %}
 
 {%block constraint%}
 {%include "constraints.rst.jj2" %}
