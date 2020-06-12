@@ -10,6 +10,7 @@ targets:
   - requirements.txt: requirements.txt.jj2
   - test.sh: test.sh.jj2
   - test.bat: test.bat.jj2
+  - "tests/requirements.txt": "tests/requirements.txt.jj2"
   - output: CHANGELOG.rst
     configuration: changelog.yml
     template: CHANGELOG.rst.jj2
