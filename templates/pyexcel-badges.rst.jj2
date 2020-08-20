@@ -1,14 +1,34 @@
 .. image:: https://raw.githubusercontent.com/pyexcel/pyexcel.github.io/master/images/patreon.png
    :target: https://www.patreon.com/chfw
 
-.. image:: https://api.bountysource.com/badge/team?team_id=288537
-   :target: https://salt.bountysource.com/teams/chfw-pyexcel
+.. image:: https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg
+   :target: https://awesome-python.com/#specific-formats-processing
 
 .. image:: https://travis-ci.org/{{organisation}}/{{name}}.svg?branch={{branch}}
    :target: http://travis-ci.org/{{organisation}}/{{name}}
 
 .. image:: https://codecov.io/gh/{{organisation}}/{{name}}/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/{{organisation}}/{{name}}
+
+{% if release!='0.0.0' %}
+.. image:: https://badge.fury.io/py/{{name}}.svg
+   :target: https://pypi.org/project/{{name}}
+{% endif %}
+
+{% if is_on_conda %}
+.. image:: https://anaconda.org/conda-forge/{{name}}/badges/version.svg
+   :target: https://anaconda.org/conda-forge/{{name}}
+{% endif %}
+
+{% if release!='0.0.0' %}
+.. image:: https://pepy.tech/badge/{{name}}/month
+   :target: https://pepy.tech/project/{{name}}/month
+{% endif %}
+
+{% if is_on_conda %}
+.. image:: https://anaconda.org/conda-forge/{{name}}/badges/downloads.svg
+   :target: https://anaconda.org/conda-forge/{{name}}
+{% endif %}
 
 .. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
    :target: https://gitter.im/pyexcel/Lobby

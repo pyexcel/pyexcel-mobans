@@ -2,7 +2,7 @@
 {{name}} - Let you focus on data, instead of {{file_type}} format
 ================================================================================
 
-{%include "badges.rst.jj2" %}
+{%include "pyexcel-badges.rst.jj2" %}
 
 {%block documentation_link%}
 .. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
@@ -12,17 +12,17 @@
 {%block description %}
 {%endblock %}
 
+Support the project
+================================================================================
+
+{%include "support.rst.jj2" %}
+
 {%include "constraints.rst.jj2" %}
 
 Installation
 ================================================================================
 
 {%include "installation.rst.jj2" %}
-
-Support the project
-================================================================================
-
-{%include "support.rst.jj2" %}
 
 Usage
 ================================================================================

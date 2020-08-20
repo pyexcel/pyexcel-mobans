@@ -1,0 +1,23 @@
+configuration:
+  configuration_dir: "git://github.com/pyexcel/pyexcel-mobans!/config"
+  template_dir:
+  - "git://github.com/moremoban/pypi-mobans.git?submodule=true&brach=master!/statics"
+  - "git://github.com/moremoban/pypi-mobans.git?branch=dev&submodule=true!/templates"
+  - "git://github.com/pyexcel/pyexcel-mobans.git!/templates"
+  - "git://github.com/pyexcel/pyexcel-mobans.git!/statics"
+  - ".moban.d"
+targets:
+  - requirements.txt: requirements.txt.jj2
+  - test.sh: test.sh.jj2
+  - test.bat: test.bat.jj2
+  - "tests/requirements.txt": "tests/requirements.txt.jj2"
+  - output: CHANGELOG.rst
+    configuration: changelog.yml
+    template: CHANGELOG.rst.jj2
+  - LICENSE: newbsd_license.jj2
+  - lint.sh: lint.script.jj2
+  - ".github/FUNDING.yml": "FUNDING.yml"
+  - ".github/PULL_REQUEST_TEMPLATE.md": PULL_REQUEST_TEMPLATE.md.jj2
+  - ".github/workflows/pythonpublish.yml": "pythonpublish.yml"
+  - Makefile: Makefile.jj2
+  - format.sh: format.sh.jj2
