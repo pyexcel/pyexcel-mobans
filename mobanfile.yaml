@@ -22,3 +22,4 @@ targets:
   - ".github/workflows/moban-update.yml": "moban-update.yml"
   - Makefile: Makefile.jj2
   - format.sh: format.sh.jj2
+  - CONTRIBUTORS.rst: CONTRIBUTORS.rst.jj2
