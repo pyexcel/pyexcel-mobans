@@ -1,7 +1,7 @@
 configuration:
   configuration_dir: "git://github.com/pyexcel/pyexcel-mobans!/config"
   template_dir:
-  - "git://github.com/moremoban/pypi-mobans.git?submodule=true&brach=master!/statics"
+  - "git://github.com/moremoban/pypi-mobans.git?submodule=true&brach=dev!/statics"
   - "git://github.com/moremoban/pypi-mobans.git?branch=dev&submodule=true!/templates"
   - "git://github.com/pyexcel/pyexcel-mobans.git!/templates"
   - "git://github.com/pyexcel/pyexcel-mobans.git!/statics"
