@@ -20,5 +20,5 @@ extensions:
 master: index
 language: Python
 lint_command: make lint
-exluded_github_users:
+excluded_github_users:
   - chfw
