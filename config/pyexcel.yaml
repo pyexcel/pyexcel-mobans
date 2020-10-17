@@ -1,6 +1,6 @@
 project: pyexcel
 name: pyexcel
-author: chfw
+author: C.W.
 nick_name: pyexcel
 copyright: copyright 2015-2020 Onni Software Ltd.
 file_type: file type
@@ -20,3 +20,5 @@ extensions:
 master: index
 language: Python
 lint_command: make lint
+exluded_github_users:
+  - chfw
