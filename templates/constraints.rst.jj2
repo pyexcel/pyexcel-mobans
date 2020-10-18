@@ -2,3 +2,5 @@ Known constraints
 ==================
 
 Fonts, colors and charts are not supported.
+
+Nor to read password protected xls, xlsx and ods files.
