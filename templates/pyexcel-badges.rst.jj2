@@ -22,7 +22,7 @@
 
 {% if release!='0.0.0' %}
 .. image:: https://pepy.tech/badge/{{name}}/month
-   :target: https://pepy.tech/project/{{name}}/month
+   :target: https://pepy.tech/project/{{name}}
 {% endif %}
 
 {% if is_on_conda %}
