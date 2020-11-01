@@ -44,7 +44,8 @@
 更多的文件格式
 ------------------------
 
-实例项目支持 csv, tsv 和他们的压缩版本: csvz and tsvz. 如果你需要其他的格式支持，请参照:ref:`file-format-list` ::
+实例项目支持 csv, tsv 和他们的压缩版本: csvz and tsvz. 如果你需要其他的格式支持，
+请参照:ref:`file-format-list`，你可以装一个或所有的::
 
     pip install pyexcel-xls
     pip install pyexcel-xlsx
