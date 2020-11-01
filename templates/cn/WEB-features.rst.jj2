@@ -1,0 +1,40 @@
+Here is a typical conversation between the developer and the user::
+
+ User: "I have uploaded an excel file"
+       "but your application says un-supported file format"
+ Developer: "Did you upload an xlsx file or a csv file?"
+ User: "Well, I am not sure. I saved the data using "
+       "Microsoft Excel. Surely, it must be in an excel format."
+ Developer: "OK. Here is the thing. I were not told to support"
+            "all available excel formats in day 1. Live with it"
+            "or delay the project x number of days."
+
+**{{name}}** is based on `pyexcel <https://github.com/pyexcel/pyexcel>`_ and makes
+it easy to consume/produce information stored in excel files over HTTP protocol as
+well as on file system. This library can turn the excel data into a list of lists,
+a list of records(dictionaries), dictionaries of lists. And vice versa. Hence it
+lets you focus on data in {{webframework}} based web development, instead of file formats.
+
+{% include "origin.rst.jj2" %}
+
+The highlighted features are:
+
+#. excel data import into and export from databases
+#. turn uploaded excel file directly into Python data structure
+#. pass Python data structures as an excel file download
+#. provide data persistence as an excel file in server side
+#. supports csv, tsv, csvz, tsvz by default and other formats are supported via
+   the following plugins:
+
+{% include "plugins-list.rst.jj2" %}
+
+
+This library makes information processing involving various excel files as easy as
+processing array, dictionary when processing file upload/download, data import into
+and export from SQL databases, information analysis and persistence. It uses
+**pyexcel** and its plugins:
+
+#. to provide one uniform programming interface to handle csv, tsv, xls, xlsx, xlsm and ods formats.
+#. to provide one-stop utility to import the data in uploaded file into a database and to export tables in a database as excel files for file download.
+#. to provide the same interface for information persistence at server side: saving a uploaded excel file to and loading a saved excel file from file system.
+

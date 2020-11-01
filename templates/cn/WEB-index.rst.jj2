@@ -1,0 +1,80 @@
+.. {{name}} documentation master file, created by
+   sphinx-quickstart on Wed Jan 07 08:46:32 2015.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+{%include "cn/header.rst.jj2" %}
+
+{%include "cn/WEB-features.rst.jj2" %}
+
+{% block further_dissertation %}
+{% endblock %}
+
+Installation
+-------------------
+
+{%include "installation.rst.jj2" %}
+
+Installation of individual plugins , please refer to individual plugin page. For example, if you need xls file support, please install pyexcel-xls::
+
+        $ pip install pyexcel-xls
+
+{%block installation_note%}
+{%endblock%}
+
+Setup
+------------------------
+{%block setup %}
+{%endblock%}
+
+{%block quick_start%}
+{%endblock%}
+
+
+{%block verified_frameworks %}
+{%endblock%}
+
+
+Support the project
+-----------------------
+
+{%include "support.rst.jj2" %}
+
+
+More excel file formats
+------------------------
+
+The example application understands csv, tsv and its zipped variants: csvz and tsvz. If you would like to expand the list of supported excel file formats (see :ref:`file-format-list`) for your own application, you could install one or all of the following::
+
+    pip install pyexcel-xls
+    pip install pyexcel-xlsx
+    pip install pyexcel-ods
+
+.. warning::
+
+   If you are using pyexcel <=0.2.1, you still need to import each plugin manually, e.g. `import pyexcel.ext.xls` and
+   Your IDE or pyflakes may highlight it as un-used but it is used. The registration of
+   the extra file format support happens when the import action is performed
+
+{%block tutorial%}
+{%endblock%}
+.. _data-types-and-its-conversion-funcs:
+
+All supported data types
+--------------------------
+
+The example application likes to have array but it is not just about arrays. Here is table of functions for all supported data types:
+
+{%block api_table%}
+{%endblock%}
+
+See more examples of the data structures in :ref:`pyexcel documentation<pyexcel:a-list-of-data-structures>`
+
+API Reference
+---------------
+
+{%block api_doc %}
+{%endblock%}
+
+{%block changelog%}
+{%endblock%}

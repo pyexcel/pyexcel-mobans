@@ -1,0 +1,13 @@
+`{{name}}` - {%block slogan%}格式万变，数据不变
+{%endblock%}
+================================================================================
+
+:作者: {{author}}
+:源文件: http://github.com/{{organisation}}/{{name}}.git
+:提交问题: http://github.com/{{organisation}}/{{name}}/issues
+:许可证: {{license}} License
+{% if release != version %}
+:发展版本: |release|
+{% endif %}
+:发布的版本: |version|
+:文档生成日期: |today|
