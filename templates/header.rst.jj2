@@ -12,5 +12,5 @@
 :Released: |version|
 :Generated: |today|
 {% if translations %}
-:Other languages: {%- for translation in translations -%}:doc:`{{translation.language}} <{{translation.link}}>` {%- endfor -%}
+:Other languages: {% for translation in translations -%}:doc:`{{translation.language}} <{{translation.link}}>`, {%- endfor %}
 {% endif %}
