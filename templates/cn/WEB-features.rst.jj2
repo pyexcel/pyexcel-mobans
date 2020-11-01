@@ -1,40 +1,38 @@
-Here is a typical conversation between the developer and the user::
+以下是一段典型的开发人员和用户的对话::
 
- User: "I have uploaded an excel file"
+ 用户: "我上传了一个 excel 文件但是你的网页说文件格式不支持。"
        "but your application says un-supported file format"
- Developer: "Did you upload an xlsx file or a csv file?"
- User: "Well, I am not sure. I saved the data using "
-       "Microsoft Excel. Surely, it must be in an excel format."
- Developer: "OK. Here is the thing. I were not told to support"
-            "all available excel formats in day 1. Live with it"
-            "or delay the project x number of days."
+ 开发人员: "哪你上传的是 xlsx 格式还是 csv 格式？"
+ 用户: "嗯，我不清楚。总之，我用的微软的 Excel 存的文件。哪一定是 excel 文件啦！"
+ 开发人员: "嗨，事情是这样：从第一天开始，你就没有告诉我要支持所有的 excel 格式。"
+          "要么，将就以下。要么，把项目推迟 N 天。"
 
-**{{name}}** is based on `pyexcel <https://github.com/pyexcel/pyexcel>`_ and makes
-it easy to consume/produce information stored in excel files over HTTP protocol as
-well as on file system. This library can turn the excel data into a list of lists,
-a list of records(dictionaries), dictionaries of lists. And vice versa. Hence it
-lets you focus on data in {{webframework}} based web development, instead of file formats.
+**{{name}}** 是基于 `pyexcel <https://github.com/pyexcel/pyexcel>`_ 软件库。它的使命是让大家
+在网站开发的时候，轻松的在数据存成 excel 文件让用户下载和处理用户上传的 excel 文件。
+它可以把 excel 数据转换成二维数组，一维的字典数组和以excel 单页名为关键字，二维数组为值的字典；反之亦然。
+这样的话，任由文件格式变化，你都可以在以下三个场景自由做数据转换:
+
+#. excel 文件上传，下载
+#. 数据库输入输出
+#. excel 数据分析和存储
+
+同时，**{{name}}** 有以下两个保证:
+
+#. 不管是任何文件格式，函数界面不变
+#. 不管是数据存在哪里，函数界面不变
+
+那么你就可以专注基于 {{webframework}} 的网站开发了。
 
 {% include "origin.rst.jj2" %}
 
-The highlighted features are:
+可圈可点性能：
 
-#. excel data import into and export from databases
-#. turn uploaded excel file directly into Python data structure
-#. pass Python data structures as an excel file download
-#. provide data persistence as an excel file in server side
-#. supports csv, tsv, csvz, tsvz by default and other formats are supported via
-   the following plugins:
+#. 为 excel 数据导入数据库和从数据库输出数据为 excel 格式提供一站式服务
+#. 把上传的 excel 文件直接转换成 Python 数据结构
+#. 把 Python 数据结构转换为 excel 文件让用户下载
+#. 在服务器里，把数据存成 excel 文件
+#. 支持 csv, tsv, csvz, tsvz 格式。其他格式有以下软件包支持：
 
 {% include "plugins-list.rst.jj2" %}
 
-
-This library makes information processing involving various excel files as easy as
-processing array, dictionary when processing file upload/download, data import into
-and export from SQL databases, information analysis and persistence. It uses
-**pyexcel** and its plugins:
-
-#. to provide one uniform programming interface to handle csv, tsv, xls, xlsx, xlsm and ods formats.
-#. to provide one-stop utility to import the data in uploaded file into a database and to export tables in a database as excel files for file download.
-#. to provide the same interface for information persistence at server side: saving a uploaded excel file to and loading a saved excel file from file system.
 
