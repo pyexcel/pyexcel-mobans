@@ -10,19 +10,19 @@
 {% block further_dissertation %}
 {% endblock %}
 
-Installation
+安装
 -------------------
 
 {%include "installation.rst.jj2" %}
 
-Installation of individual plugins , please refer to individual plugin page. For example, if you need xls file support, please install pyexcel-xls::
+每个插件的安装方法都有各自的文档。拿 xlsx 为例，你需要装 pyexcel-xlsx ::
 
-        $ pip install pyexcel-xls
+        $ pip install pyexcel-xlsx
 
 {%block installation_note%}
 {%endblock%}
 
-Setup
+配置
 ------------------------
 {%block setup %}
 {%endblock%}
@@ -35,16 +35,16 @@ Setup
 {%endblock%}
 
 
-Support the project
+支持
 -----------------------
 
 {%include "support.rst.jj2" %}
 
 
-More excel file formats
+更多的文件格式
 ------------------------
 
-The example application understands csv, tsv and its zipped variants: csvz and tsvz. If you would like to expand the list of supported excel file formats (see :ref:`file-format-list`) for your own application, you could install one or all of the following::
+实例项目支持 csv, tsv 和他们的压缩版本: csvz and tsvz. 如果你需要其他的格式支持，请参照
 
     pip install pyexcel-xls
     pip install pyexcel-xlsx
