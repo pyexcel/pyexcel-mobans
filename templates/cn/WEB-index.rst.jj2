@@ -50,27 +50,22 @@
     pip install pyexcel-xlsx
     pip install pyexcel-ods
 
-.. warning::
-
-   If you are using pyexcel <=0.2.1, you still need to import each plugin manually, e.g. `import pyexcel.ext.xls` and
-   Your IDE or pyflakes may highlight it as un-used but it is used. The registration of
-   the extra file format support happens when the import action is performed
-
 {%block tutorial%}
 {%endblock%}
 .. _data-types-and-its-conversion-funcs:
 
-All supported data types
+所有支持的数据结构
 --------------------------
 
-The example application likes to have array but it is not just about arrays. Here is table of functions for all supported data types:
+示例应用展示了数列，并不代表只有数列，其他的数据结构也是支持的。 以下是所有的数据结构列表:
+
 
 {%block api_table%}
 {%endblock%}
 
-See more examples of the data structures in :ref:`pyexcel documentation<pyexcel:a-list-of-data-structures>`
+需要更多信息的话，可以参照 :ref:`pyexcel documentation<pyexcel:a-list-of-data-structures>`
 
-API Reference
+函数参考
 ---------------
 
 {%block api_doc %}
