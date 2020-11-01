@@ -4,7 +4,7 @@
 .. table:: 文件格式插件列表
 
    ======================== ======================= =================
-   Package name              Supported file formats  Dependencies
+   包包名字                  文件格式                 依赖
    ======================== ======================= =================
    `pyexcel-io`_            csv, csvz [#f1]_, tsv,
                             tsvz [#f2]_
@@ -19,7 +19,7 @@
 .. table:: 专门读或写的插件
 
    ======================== ======================= =================
-   Package name              Supported file formats  Dependencies
+   包包名字                  文件格式                 依赖
    ======================== ======================= =================
    `pyexcel-xlsxw`_         xlsx(write only)        `XlsxWriter`_
    `pyexcel-libxlsxw`_      xlsx(write only)        `libxlsxwriter`_
