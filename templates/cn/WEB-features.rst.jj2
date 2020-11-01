@@ -23,7 +23,7 @@
 
 那么你就可以专注基于 {{webframework}} 的网站开发了。
 
-{% include "origin.rst.jj2" %}
+{% include "cn/origin.rst.jj2" %}
 
 可圈可点性能：
 
@@ -33,6 +33,6 @@
 #. 在服务器里，把数据存成 excel 文件
 #. 支持 csv, tsv, csvz, tsvz 格式。其他格式有以下软件包支持：
 
-{% include "plugins-list.rst.jj2" %}
+{% include "cn/plugins-list.rst.jj2" %}
 
 

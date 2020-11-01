@@ -1,0 +1,81 @@
+.. _file-format-list:
+.. _a-map-of-plugins-and-file-formats:
+
+.. table:: 文件格式插件列表
+
+   ======================== ======================= =================
+   Package name              Supported file formats  Dependencies
+   ======================== ======================= =================
+   `pyexcel-io`_            csv, csvz [#f1]_, tsv,
+                            tsvz [#f2]_
+   `pyexcel-xls`_           xls, xlsx(read only),   `xlrd`_,
+                            xlsm(read only)         `xlwt`_
+   `pyexcel-xlsx`_          xlsx                    `openpyxl`_
+   `pyexcel-ods3`_          ods                     `pyexcel-ezodf`_,
+                                                    lxml
+   `pyexcel-ods`_           ods                     `odfpy`_
+   ======================== ======================= =================
+
+.. table:: 专门读或写的插件
+
+   ======================== ======================= =================
+   Package name              Supported file formats  Dependencies
+   ======================== ======================= =================
+   `pyexcel-xlsxw`_         xlsx(write only)        `XlsxWriter`_
+   `pyexcel-libxlsxw`_      xlsx(write only)        `libxlsxwriter`_
+   `pyexcel-xlsxr`_         xlsx(read only)         lxml
+   `pyexcel-xlsbr`_         xlsb(read only)         pyxlsb
+   `pyexcel-odsr`_          read only for ods, fods lxml
+   `pyexcel-odsw`_          write only for ods      loxun
+   `pyexcel-htmlr`_         html(read only)         lxml,html5lib
+   `pyexcel-pdfr`_          pdf(read only)          camelot
+   ======================== ======================= =================
+
+
+插件使用指南
+------------------------
+
+从2020年开始，所有 pyexcel-io 的插件都需要至少 python 3.6 了。如果需要支持以前的
+python 版本，请继续使用 0.5.x 。
+
+除了 csv 文件， xls, xlsx 和 ods 文件都是一个压缩文件。里面都是 xml 文件。
+
+只有专门的读写插件可以边读边用或者边转换边写。
+
+如果管理所有已经装上了的插件呢？很简单，你可以用 pip 添加需要的插件，或者卸载不需要的插件。
+如果你有不同的项目，而且项目的依赖不一样，作者推荐用 python 的 venv 来给你的每一个项目创建
+一个新的虚拟 python 环境。有个别情况，两个插件需要共存，比如 pyexcel-ods 和 pyexcel-odsr，
+前者可以写 ods 文件，但你需要后者来读 ods 文件。在这种情形下呢，你可以用 library 变量，
+比如 get_array('my.ods', library='pyexcel-odsr')。
+
+
+
+.. _pyexcel-io: https://github.com/pyexcel/pyexcel-io
+.. _pyexcel-xls: https://github.com/pyexcel/pyexcel-xls
+.. _pyexcel-xlsx: https://github.com/pyexcel/pyexcel-xlsx
+.. _pyexcel-ods: https://github.com/pyexcel/pyexcel-ods
+.. _pyexcel-ods3: https://github.com/pyexcel/pyexcel-ods3
+.. _pyexcel-odsr: https://github.com/pyexcel/pyexcel-odsr
+.. _pyexcel-odsw: https://github.com/pyexcel/pyexcel-odsw
+.. _pyexcel-pdfr: https://github.com/pyexcel/pyexcel-pdfr
+
+.. _pyexcel-xlsxw: https://github.com/pyexcel/pyexcel-xlsxw
+.. _pyexcel-libxlsxw: https://github.com/pyexcel/pyexcel-libxlsxw
+.. _pyexcel-xlsxr: https://github.com/pyexcel/pyexcel-xlsxr
+.. _pyexcel-xlsbr: https://github.com/pyexcel/pyexcel-xlsbr
+.. _pyexcel-htmlr: https://github.com/pyexcel/pyexcel-htmlr
+
+.. _xlrd: https://github.com/python-excel/xlrd
+.. _xlwt: https://github.com/python-excel/xlwt
+.. _openpyxl: https://bitbucket.org/openpyxl/openpyxl
+.. _XlsxWriter: https://github.com/jmcnamara/XlsxWriter
+.. _pyexcel-ezodf: https://github.com/pyexcel/pyexcel-ezodf
+.. _odfpy: https://github.com/eea/odfpy
+.. _libxlsxwriter: http://libxlsxwriter.github.io/getting_started.html
+
+{%block more_plugins%}{%endblock%}
+
+.. rubric:: Footnotes
+
+.. [#f1] zipped csv file
+.. [#f2] zipped tsv file
