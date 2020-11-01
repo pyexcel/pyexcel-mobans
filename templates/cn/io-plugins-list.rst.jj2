@@ -77,5 +77,5 @@ python 版本，请继续使用 0.5.x 。
 
 .. rubric:: Footnotes
 
-.. [#f1] zipped csv file
-.. [#f2] zipped tsv file
+.. [#f1] 压缩了的 csv 文件
+.. [#f2] 压缩了的 tsv 文件

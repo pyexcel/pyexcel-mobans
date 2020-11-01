@@ -1,0 +1,24 @@
+{% if not scm_host %}
+{% set scm_host = 'github.com' %}
+{% endif %}
+{% if release != '0.0.0' %}
+
+你可以通过 pip 安装 {{name}} ：
+
+.. code-block:: bash
+
+    $ pip install {{name}}
+
+
+或者复制到本地再安装：
+{% else %}
+你可以这样拷贝一份:
+{% endif %}
+
+.. code-block:: bash
+
+    $ git clone https://{{scm_host}}/{{organisation}}/{{name}}.git
+    $ cd {{name}}
+{% if setup_py != False %}
+    $ python setup.py install
+{% endif %}

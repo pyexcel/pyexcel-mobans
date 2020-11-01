@@ -13,7 +13,7 @@
 安装
 -------------------
 
-{%include "installation.rst.jj2" %}
+{%include "cn/installation.rst.jj2" %}
 
 每个插件的安装方法都有各自的文档。拿 xlsx 为例，你需要装 pyexcel-xlsx ::
 
@@ -33,12 +33,6 @@
 
 {%block verified_frameworks %}
 {%endblock%}
-
-
-支持
------------------------
-
-{%include "support.rst.jj2" %}
 
 
 更多的文件格式
@@ -65,6 +59,11 @@
 {%endblock%}
 
 需要更多信息的话，可以参照 :ref:`pyexcel documentation<pyexcel:a-list-of-data-structures>`
+
+支持
+-----------------------
+
+{%include "support.rst.jj2" %}
 
 函数参考
 ---------------
