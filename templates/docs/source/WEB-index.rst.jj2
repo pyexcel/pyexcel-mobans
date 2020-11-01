@@ -15,9 +15,9 @@ Installation
 
 {%include "installation.rst.jj2" %}
 
-Installation of individual plugins , please refer to individual plugin page. For example, if you need xls file support, please install pyexcel-xls::
+Installation of individual plugins , please refer to individual plugin page. For example, if you need xlsx file support, please install pyexcel-xlsx::
 
-        $ pip install pyexcel-xls
+        $ pip install pyexcel-xlsx
 
 {%block installation_note%}
 {%endblock%}
