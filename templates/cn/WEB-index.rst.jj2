@@ -63,7 +63,7 @@
 支持
 -----------------------
 
-{%include "support.rst.jj2" %}
+{%include "cn/support.rst.jj2" %}
 
 函数参考
 ---------------
