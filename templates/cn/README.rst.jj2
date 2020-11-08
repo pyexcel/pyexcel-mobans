@@ -1,0 +1,292 @@
+================================================================================
+{{name}} - Let you focus on data, instead of {{file_type}} format
+================================================================================
+
+{%include "pyexcel-badges.rst.jj2" %}
+
+{%block documentation_link%}
+.. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
+   :target: http://{{name|lower}}.readthedocs.org/en/latest/
+{%endblock%}
+
+{%block description %}
+{%endblock %}
+
+Support the project
+================================================================================
+
+{%include "support.rst.jj2" %}
+
+{%include "constraints.rst.jj2" %}
+
+Installation
+================================================================================
+
+{%include "installation.rst.jj2" %}
+
+Usage
+================================================================================
+
+As a standalone library
+--------------------------------------------------------------------------------
+
+.. testcode::
+   :hide:
+
+    >>> import os
+    >>> import sys
+    >>> if sys.version_info[0] < 3:
+    ...     from StringIO import StringIO
+    ... else:
+    ...     from io import BytesIO as StringIO
+    >>> PY2 = sys.version_info[0] == 2
+    >>> if PY2 and sys.version_info[1] < 7:
+    ...      from ordereddict import OrderedDict
+    ... else:
+    ...     from collections import OrderedDict
+
+{% block write_to_file %}
+
+Write to an {{file_type}} file
+********************************************************************************
+
+
+
+Here's the sample code to write a dictionary to an {{file_type}} file:
+
+.. code-block:: python
+
+    >>> from pyexcel_{{nick_name}} import save_data
+    >>> data = OrderedDict() # from collections import OrderedDict
+    >>> data.update({"Sheet 1": [[1, 2, 3], [4, 5, 6]]})
+    >>> data.update({"Sheet 2": [["row 1", "row 2", "row 3"]]})
+    >>> save_data("your_file.{{file_type}}", data)
+
+{% endblock %}
+
+{%block read_from_file %}
+Read from an {{file_type}} file
+********************************************************************************
+
+Here's the sample code:
+
+.. code-block:: python
+
+    >>> from pyexcel_{{nick_name}} import get_data
+    >>> data = get_data("your_file.{{file_type}}")
+    >>> import json
+    >>> print(json.dumps(data))
+    {"Sheet 1": [[1, 2, 3], [4, 5, 6]], "Sheet 2": [["row 1", "row 2", "row 3"]]}
+
+{%endblock%}
+
+{% block write_to_memory %}
+Write an {{file_type}} to memory
+********************************************************************************
+
+Here's the sample code to write a dictionary to an {{file_type}} file:
+
+.. code-block:: python
+
+    >>> from pyexcel_{{nick_name}} import save_data
+    >>> data = OrderedDict()
+    >>> data.update({"Sheet 1": [[1, 2, 3], [4, 5, 6]]})
+    >>> data.update({"Sheet 2": [[7, 8, 9], [10, 11, 12]]})
+    >>> io = StringIO()
+    >>> save_data(io, data)
+    >>> # do something with the io
+    >>> # In reality, you might give it to your http response
+    >>> # object for downloading
+
+
+{%endblock%}
+
+{%block middle_block %}
+{%endblock%}
+
+{%block read_from_memory %}
+Read from an {{file_type}} from memory
+********************************************************************************
+
+Continue from previous example:
+
+.. code-block:: python
+
+    >>> # This is just an illustration
+    >>> # In reality, you might deal with {{file_type}} file upload
+    >>> # where you will read from requests.FILES['YOUR_{{file_type|upper}}_FILE']
+    >>> data = get_data(io)
+    >>> print(json.dumps(data))
+    {"Sheet 1": [[1, 2, 3], [4, 5, 6]], "Sheet 2": [[7, 8, 9], [10, 11, 12]]}
+
+{%endblock%}
+
+{%block pagination%}
+Pagination feature
+********************************************************************************
+
+{% block pagination_note %}
+
+{% endblock%}
+
+Let's assume the following file is a huge {{file_type}} file:
+
+.. code-block:: python
+
+   >>> huge_data = [
+   ...     [1, 21, 31],
+   ...     [2, 22, 32],
+   ...     [3, 23, 33],
+   ...     [4, 24, 34],
+   ...     [5, 25, 35],
+   ...     [6, 26, 36]
+   ... ]
+   >>> sheetx = {
+   ...     "huge": huge_data
+   ... }
+   >>> save_data("huge_file.{{file_type}}", sheetx)
+
+And let's pretend to read partial data:
+
+.. code-block:: python
+
+   >>> partial_data = get_data("huge_file.{{file_type}}", start_row=2, row_limit=3)
+   >>> print(json.dumps(partial_data))
+   {"huge": [[3, 23, 33], [4, 24, 34], [5, 25, 35]]}
+
+And you could as well do the same for columns:
+
+.. code-block:: python
+
+   >>> partial_data = get_data("huge_file.{{file_type}}", start_column=1, column_limit=2)
+   >>> print(json.dumps(partial_data))
+   {"huge": [[21, 31], [22, 32], [23, 33], [24, 34], [25, 35], [26, 36]]}
+
+Obvious, you could do both at the same time:
+
+.. code-block:: python
+
+   >>> partial_data = get_data("huge_file.{{file_type}}",
+   ...     start_row=2, row_limit=3,
+   ...     start_column=1, column_limit=2)
+   >>> print(json.dumps(partial_data))
+   {"huge": [[23, 33], [24, 34], [25, 35]]}
+
+.. testcode::
+   :hide:
+
+   >>> os.unlink("huge_file.{{file_type}}")
+
+{%endblock%}
+
+As a pyexcel plugin
+--------------------------------------------------------------------------------
+
+No longer, explicit import is needed since pyexcel version 0.2.2. Instead,
+this library is auto-loaded. So if you want to read data in {{file_type}} format,
+installing it is enough.
+
+{%block read_from_file_via_pyexcel %}
+
+Reading from an {{file_type}} file
+********************************************************************************
+
+Here is the sample code:
+
+.. code-block:: python
+
+    >>> import pyexcel as pe
+    >>> sheet = pe.get_book(file_name="your_file.{{file_type}}")
+    >>> sheet
+    Sheet 1:
+    +---+---+---+
+    | 1 | 2 | 3 |
+    +---+---+---+
+    | 4 | 5 | 6 |
+    +---+---+---+
+    Sheet 2:
+    +-------+-------+-------+
+    | row 1 | row 2 | row 3 |
+    +-------+-------+-------+
+
+{%endblock%}
+
+{% block pyexcel_write_to_file%}
+Writing to an {{file_type}} file
+********************************************************************************
+
+Here is the sample code:
+
+.. code-block:: python
+
+    >>> sheet.save_as("another_file.{{file_type}}")
+{% endblock %}
+
+{%block read_from_memory_via_pyexcel %}
+
+Reading from a IO instance
+********************************************************************************
+
+You got to wrap the binary content with stream to get {{file_type}} working:
+
+.. code-block:: python
+
+    >>> # This is just an illustration
+    >>> # In reality, you might deal with {{file_type}} file upload
+    >>> # where you will read from requests.FILES['YOUR_{{file_type|upper}}_FILE']
+    >>> {{file_type}}file = "another_file.{{file_type}}"
+    >>> with open({{file_type}}file, "rb") as f:
+    ...     content = f.read()
+    ...     r = pe.get_book(file_type="{{file_type}}", file_content=content)
+    ...     print(r)
+    ...
+    Sheet 1:
+    +---+---+---+
+    | 1 | 2 | 3 |
+    +---+---+---+
+    | 4 | 5 | 6 |
+    +---+---+---+
+    Sheet 2:
+    +-------+-------+-------+
+    | row 1 | row 2 | row 3 |
+    +-------+-------+-------+
+
+{%endblock%}
+
+{% block pyexcel_write_to_memory%}
+Writing to a StringIO instance
+********************************************************************************
+
+You need to pass a StringIO instance to Writer:
+
+.. code-block:: python
+
+    >>> data = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> io = StringIO()
+    >>> sheet = pe.Sheet(data)
+    >>> io = sheet.save_to_memory("{{file_type}}", io)
+    >>> # then do something with io
+    >>> # In reality, you might give it to your http response
+    >>> # object for downloading
+{% endblock %}
+
+
+{%include "license.rst.jj2" %}
+
+Developer guide
+==================
+
+{%include 'developer_guide.rst.jj2' %}
+
+{%block extras %}
+{%endblock %}
+
+.. testcode::
+   :hide:
+
+   >>> import os
+   >>> os.unlink("your_file.{{file_type}}")
+   >>> os.unlink("another_file.{{file_type}}")
