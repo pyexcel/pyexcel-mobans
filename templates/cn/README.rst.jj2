@@ -1,5 +1,5 @@
 ================================================================================
-{{name}} - Let you focus on data, instead of {{file_type}} format
+{{name}} - 就算是 {{file_type}} 格式，我们也能读
 ================================================================================
 
 {%include "pyexcel-badges.rst.jj2" %}
@@ -12,22 +12,22 @@
 {%block description %}
 {%endblock %}
 
-Support the project
+鼓励和支持
 ================================================================================
 
-{%include "support.rst.jj2" %}
+{%include "cn/support.rst.jj2" %}
 
-{%include "constraints.rst.jj2" %}
+{%include "cn/constraints.rst.jj2" %}
 
-Installation
+安装
 ================================================================================
 
 {%include "installation.rst.jj2" %}
 
-Usage
+用法
 ================================================================================
 
-As a standalone library
+做为独立的包包
 --------------------------------------------------------------------------------
 
 .. testcode::
@@ -47,12 +47,11 @@ As a standalone library
 
 {% block write_to_file %}
 
-Write to an {{file_type}} file
+写一个 {{file_type}} 文件
 ********************************************************************************
 
 
-
-Here's the sample code to write a dictionary to an {{file_type}} file:
+以下是把一个字典类数据结构写入 {{file_type}} 文件:
 
 .. code-block:: python
 
@@ -65,10 +64,10 @@ Here's the sample code to write a dictionary to an {{file_type}} file:
 {% endblock %}
 
 {%block read_from_file %}
-Read from an {{file_type}} file
+从一个 {{file_type}} 文件读取数据
 ********************************************************************************
 
-Here's the sample code:
+下面是示例程序
 
 .. code-block:: python
 
@@ -81,10 +80,11 @@ Here's the sample code:
 {%endblock%}
 
 {% block write_to_memory %}
-Write an {{file_type}} to memory
+把 ｛{file_type}} 文件写入内存
 ********************************************************************************
 
-Here's the sample code to write a dictionary to an {{file_type}} file:
+就作者而言，一般网站开发的时候需要把文件放在内存里然后给用户下载。
+再有就是做压缩文件的时候，你也需要存入内存。
 
 .. code-block:: python
 
@@ -105,16 +105,13 @@ Here's the sample code to write a dictionary to an {{file_type}} file:
 {%endblock%}
 
 {%block read_from_memory %}
-Read from an {{file_type}} from memory
+从内存读 {{file_type}} 文件
 ********************************************************************************
 
-Continue from previous example:
+延续以上例子，我们把存入的文件读出来：
 
 .. code-block:: python
 
-    >>> # This is just an illustration
-    >>> # In reality, you might deal with {{file_type}} file upload
-    >>> # where you will read from requests.FILES['YOUR_{{file_type|upper}}_FILE']
     >>> data = get_data(io)
     >>> print(json.dumps(data))
     {"Sheet 1": [[1, 2, 3], [4, 5, 6]], "Sheet 2": [[7, 8, 9], [10, 11, 12]]}
@@ -122,14 +119,13 @@ Continue from previous example:
 {%endblock%}
 
 {%block pagination%}
-Pagination feature
+翻页功能
 ********************************************************************************
 
 {% block pagination_note %}
+{% endblock %}
 
-{% endblock%}
-
-Let's assume the following file is a huge {{file_type}} file:
+我们假设需要读一个非常大的 {{file_type}} 文件：
 
 .. code-block:: python
 
@@ -146,7 +142,7 @@ Let's assume the following file is a huge {{file_type}} file:
    ... }
    >>> save_data("huge_file.{{file_type}}", sheetx)
 
-And let's pretend to read partial data:
+让我们抽取一本数据:
 
 .. code-block:: python
 
@@ -154,7 +150,7 @@ And let's pretend to read partial data:
    >>> print(json.dumps(partial_data))
    {"huge": [[3, 23, 33], [4, 24, 34], [5, 25, 35]]}
 
-And you could as well do the same for columns:
+你也可以垂直抽取几个列:
 
 .. code-block:: python
 
@@ -162,7 +158,7 @@ And you could as well do the same for columns:
    >>> print(json.dumps(partial_data))
    {"huge": [[21, 31], [22, 32], [23, 33], [24, 34], [25, 35], [26, 36]]}
 
-Obvious, you could do both at the same time:
+你也可以同时抽取行和列：
 
 .. code-block:: python
 
@@ -179,19 +175,18 @@ Obvious, you could do both at the same time:
 
 {%endblock%}
 
-As a pyexcel plugin
+做为 pyexcel 的一个插件
 --------------------------------------------------------------------------------
 
-No longer, explicit import is needed since pyexcel version 0.2.2. Instead,
-this library is auto-loaded. So if you want to read data in {{file_type}} format,
-installing it is enough.
+只要你用 pip 装了本包包，pyexcel 是会自动发现的。你不需要再做什么。
+
 
 {%block read_from_file_via_pyexcel %}
 
-Reading from an {{file_type}} file
+同样的读 {{file_type}} 文件
 ********************************************************************************
 
-Here is the sample code:
+示例代码
 
 .. code-block:: python
 
@@ -212,10 +207,10 @@ Here is the sample code:
 {%endblock%}
 
 {% block pyexcel_write_to_file%}
-Writing to an {{file_type}} file
+同样的写入一个 {{file_type}} 文件
 ********************************************************************************
 
-Here is the sample code:
+这个很简单：
 
 .. code-block:: python
 
