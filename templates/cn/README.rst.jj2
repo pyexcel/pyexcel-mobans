@@ -219,11 +219,10 @@
 
 {%block read_from_memory_via_pyexcel %}
 
-Reading from a IO instance
+从 StringIO 里读取数据
 ********************************************************************************
 
-You got to wrap the binary content with stream to get {{file_type}} working:
-
+你把文件内容用 StringIO 包裹一下，就可以读了 {{file_type}}:
 .. code-block:: python
 
     >>> # This is just an illustration
@@ -249,10 +248,10 @@ You got to wrap the binary content with stream to get {{file_type}} working:
 {%endblock%}
 
 {% block pyexcel_write_to_memory%}
-Writing to a StringIO instance
+写入 StringIO
 ********************************************************************************
 
-You need to pass a StringIO instance to Writer:
+你可以传入一个 StringIO 的实例：
 
 .. code-block:: python
 
@@ -271,7 +270,7 @@ You need to pass a StringIO instance to Writer:
 
 {%include "license.rst.jj2" %}
 
-Developer guide
+开发人员指南
 ==================
 
 {%include 'developer_guide.rst.jj2' %}
