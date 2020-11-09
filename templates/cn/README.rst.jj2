@@ -1,0 +1,286 @@
+================================================================================
+{{name}} - 就算是 {{file_type}} 格式，我们也能读
+================================================================================
+
+{%include "pyexcel-badges.rst.jj2" %}
+
+{%block documentation_link%}
+.. image:: https://readthedocs.org/projects/{{name|lower}}/badge/?version=latest
+   :target: http://{{name|lower}}.readthedocs.org/en/latest/
+{%endblock%}
+
+{%block description %}
+{%endblock %}
+
+鼓励和支持
+================================================================================
+
+{%include "cn/support.rst.jj2" %}
+
+{%include "cn/constraints.rst.jj2" %}
+
+安装
+================================================================================
+
+{%include "cn/installation.rst.jj2" %}
+
+用法
+================================================================================
+
+做为独立的包包
+--------------------------------------------------------------------------------
+
+.. testcode::
+   :hide:
+
+    >>> import os
+    >>> import sys
+    >>> if sys.version_info[0] < 3:
+    ...     from StringIO import StringIO
+    ... else:
+    ...     from io import BytesIO as StringIO
+    >>> PY2 = sys.version_info[0] == 2
+    >>> if PY2 and sys.version_info[1] < 7:
+    ...      from ordereddict import OrderedDict
+    ... else:
+    ...     from collections import OrderedDict
+
+{% block write_to_file %}
+
+写一个 {{file_type}} 文件
+********************************************************************************
+
+
+以下是把一个字典类数据结构写入 {{file_type}} 文件:
+
+.. code-block:: python
+
+    >>> from pyexcel_{{nick_name}} import save_data
+    >>> data = OrderedDict() # from collections import OrderedDict
+    >>> data.update({"Sheet 1": [[1, 2, 3], [4, 5, 6]]})
+    >>> data.update({"Sheet 2": [["row 1", "row 2", "row 3"]]})
+    >>> save_data("your_file.{{file_type}}", data)
+
+{% endblock %}
+
+{%block read_from_file %}
+从一个 {{file_type}} 文件读取数据
+********************************************************************************
+
+下面是示例程序
+
+.. code-block:: python
+
+    >>> from pyexcel_{{nick_name}} import get_data
+    >>> data = get_data("your_file.{{file_type}}")
+    >>> import json
+    >>> print(json.dumps(data))
+    {"Sheet 1": [[1, 2, 3], [4, 5, 6]], "Sheet 2": [["row 1", "row 2", "row 3"]]}
+
+{%endblock%}
+
+{% block write_to_memory %}
+把 ｛{file_type}} 文件写入内存
+********************************************************************************
+
+就作者而言，一般网站开发的时候需要把文件放在内存里然后给用户下载。
+再有就是做压缩文件的时候，你也需要存入内存。
+
+.. code-block:: python
+
+    >>> from pyexcel_{{nick_name}} import save_data
+    >>> data = OrderedDict()
+    >>> data.update({"Sheet 1": [[1, 2, 3], [4, 5, 6]]})
+    >>> data.update({"Sheet 2": [[7, 8, 9], [10, 11, 12]]})
+    >>> io = StringIO()
+    >>> save_data(io, data)
+    >>> # do something with the io
+    >>> # In reality, you might give it to your http response
+    >>> # object for downloading
+
+
+{%endblock%}
+
+{%block middle_block %}
+{%endblock%}
+
+{%block read_from_memory %}
+从内存读 {{file_type}} 文件
+********************************************************************************
+
+延续以上例子，我们把存入的文件读出来：
+
+.. code-block:: python
+
+    >>> data = get_data(io)
+    >>> print(json.dumps(data))
+    {"Sheet 1": [[1, 2, 3], [4, 5, 6]], "Sheet 2": [[7, 8, 9], [10, 11, 12]]}
+
+{%endblock%}
+
+{%block pagination%}
+翻页功能
+********************************************************************************
+
+{% block pagination_note %}
+{% endblock %}
+
+我们假设需要读一个非常大的 {{file_type}} 文件：
+
+.. code-block:: python
+
+   >>> huge_data = [
+   ...     [1, 21, 31],
+   ...     [2, 22, 32],
+   ...     [3, 23, 33],
+   ...     [4, 24, 34],
+   ...     [5, 25, 35],
+   ...     [6, 26, 36]
+   ... ]
+   >>> sheetx = {
+   ...     "huge": huge_data
+   ... }
+   >>> save_data("huge_file.{{file_type}}", sheetx)
+
+让我们抽取一本数据:
+
+.. code-block:: python
+
+   >>> partial_data = get_data("huge_file.{{file_type}}", start_row=2, row_limit=3)
+   >>> print(json.dumps(partial_data))
+   {"huge": [[3, 23, 33], [4, 24, 34], [5, 25, 35]]}
+
+你也可以垂直抽取几个列:
+
+.. code-block:: python
+
+   >>> partial_data = get_data("huge_file.{{file_type}}", start_column=1, column_limit=2)
+   >>> print(json.dumps(partial_data))
+   {"huge": [[21, 31], [22, 32], [23, 33], [24, 34], [25, 35], [26, 36]]}
+
+你也可以同时抽取行和列：
+
+.. code-block:: python
+
+   >>> partial_data = get_data("huge_file.{{file_type}}",
+   ...     start_row=2, row_limit=3,
+   ...     start_column=1, column_limit=2)
+   >>> print(json.dumps(partial_data))
+   {"huge": [[23, 33], [24, 34], [25, 35]]}
+
+.. testcode::
+   :hide:
+
+   >>> os.unlink("huge_file.{{file_type}}")
+
+{%endblock%}
+
+做为 pyexcel 的一个插件
+--------------------------------------------------------------------------------
+
+只要你用 pip 装了本包包，pyexcel 是会自动发现的。你不需要再做什么。
+
+
+{%block read_from_file_via_pyexcel %}
+
+同样的读 {{file_type}} 文件
+********************************************************************************
+
+示例代码
+
+.. code-block:: python
+
+    >>> import pyexcel as pe
+    >>> sheet = pe.get_book(file_name="your_file.{{file_type}}")
+    >>> sheet
+    Sheet 1:
+    +---+---+---+
+    | 1 | 2 | 3 |
+    +---+---+---+
+    | 4 | 5 | 6 |
+    +---+---+---+
+    Sheet 2:
+    +-------+-------+-------+
+    | row 1 | row 2 | row 3 |
+    +-------+-------+-------+
+
+{%endblock%}
+
+{% block pyexcel_write_to_file%}
+同样的写入一个 {{file_type}} 文件
+********************************************************************************
+
+这个很简单：
+
+.. code-block:: python
+
+    >>> sheet.save_as("another_file.{{file_type}}")
+{% endblock %}
+
+{%block read_from_memory_via_pyexcel %}
+
+从 StringIO 里读取数据
+********************************************************************************
+
+你把文件内容用 StringIO 包裹一下，就可以读了 {{file_type}}:
+.. code-block:: python
+
+    >>> # This is just an illustration
+    >>> # In reality, you might deal with {{file_type}} file upload
+    >>> # where you will read from requests.FILES['YOUR_{{file_type|upper}}_FILE']
+    >>> {{file_type}}file = "another_file.{{file_type}}"
+    >>> with open({{file_type}}file, "rb") as f:
+    ...     content = f.read()
+    ...     r = pe.get_book(file_type="{{file_type}}", file_content=content)
+    ...     print(r)
+    ...
+    Sheet 1:
+    +---+---+---+
+    | 1 | 2 | 3 |
+    +---+---+---+
+    | 4 | 5 | 6 |
+    +---+---+---+
+    Sheet 2:
+    +-------+-------+-------+
+    | row 1 | row 2 | row 3 |
+    +-------+-------+-------+
+
+{%endblock%}
+
+{% block pyexcel_write_to_memory%}
+写入 StringIO
+********************************************************************************
+
+你可以传入一个 StringIO 的实例：
+
+.. code-block:: python
+
+    >>> data = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> io = StringIO()
+    >>> sheet = pe.Sheet(data)
+    >>> io = sheet.save_to_memory("{{file_type}}", io)
+    >>> # then do something with io
+    >>> # In reality, you might give it to your http response
+    >>> # object for downloading
+{% endblock %}
+
+
+{%include "license.rst.jj2" %}
+
+开发人员指南
+==================
+
+{%include 'developer_guide.rst.jj2' %}
+
+{%block extras %}
+{%endblock %}
+
+.. testcode::
+   :hide:
+
+   >>> import os
+   >>> os.unlink("your_file.{{file_type}}")
+   >>> os.unlink("another_file.{{file_type}}")
