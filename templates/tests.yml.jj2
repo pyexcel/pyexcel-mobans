@@ -10,14 +10,14 @@ jobs:
             python-version: [3.6, 3.7, 3.8, 3.9]
             os: [macOs-latest, ubuntu-latest, windows-latest]
 
-    runs-on: ${{ matrix.os }}
+    runs-on: {%raw %} ${{ matrix.os }} {%endraw%}
     name: run tests
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
-            python-version: ${{ matrix.python-version }}
+            python-version: {%raw%%} ${{ matrix.python-version }}{%endraw%}
       - name: install
         run: |
           pip install -r requirements.txt
