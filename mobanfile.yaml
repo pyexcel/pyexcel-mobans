@@ -17,7 +17,7 @@ targets:
   - ".github/FUNDING.yml": "FUNDING.yml"
   - ".github/PULL_REQUEST_TEMPLATE.md": PULL_REQUEST_TEMPLATE.md.jj2
   - ".github/workflows/pythonpublish.yml": "pythonpublish.yml"
-  - ".github/workflows/tests.yml": "tests.yml"
+  - ".github/workflows/tests.yml": "tests.yml.jj2"
   - ".github/workflows/lint.yml": "lint.yml"
   - ".github/workflows/moban-update.yml": "moban-update.yml"
   - Makefile: Makefile.jj2
