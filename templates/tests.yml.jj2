@@ -1,3 +1,26 @@
+{%block pretest%}
+{%endblock%}
+{%if external_module_library%}
+  {%set package=external_module_library%}
+{%else%}
+  {%if webframework%}
+    {%set package=webframework + '_excel' %}
+  {%else%}
+    {%if misc%}
+      {%set package=misc %}
+    {%else%}
+      {%if command_line_interface%}
+        {%set package=name%}
+      {%else%}
+        {% if name == nick_name %}
+          {%set package=name%}
+        {%else%}
+          {%set package=name%}
+        {%endif%}
+      {%endif%}
+	{%endif%}
+  {%endif%}
+{%endif%}
 name: run_tests
 
 on: [push, pull_request]
