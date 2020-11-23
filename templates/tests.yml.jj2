@@ -33,7 +33,7 @@ jobs:
             python-version: [3.6, 3.7, 3.8, 3.9]
             os: [macOs-latest, ubuntu-latest, windows-latest]
 
-    runs-on: {% raw %} ${{ matrix.os }} {% endraw %}
+    runs-on: {% raw %} ${{ matrix.os }}{% endraw %}
 
     name: run tests
     steps:
@@ -51,3 +51,8 @@ jobs:
         run: |
           pip freeze
           nosetests --with-coverage --cover-package {{package|lower|replace('-', '_')}} --cover-package tests tests {%if include_doctest%}--with-doctest --doctest-extension=.rst {%if not skip_readme%}README.rst{%endif%}{%endif%} {%if not nodocs%}docs/source{%endif%} {%if not external_module_library%}{{package|lower|replace('-', '_')}}{%endif%}
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v1
+        with:
+          name: {% raw %} ${{ matrix.os }} Python ${{ matrix.python-version }}{% endraw %}
