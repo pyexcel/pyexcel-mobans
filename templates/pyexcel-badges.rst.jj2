@@ -4,8 +4,8 @@
 .. image:: https://raw.githubusercontent.com/pyexcel/pyexcel-mobans/master/images/awesome-badge.svg
    :target: https://awesome-python.com/#specific-formats-processing
 
-.. image:: https://travis-ci.org/{{organisation}}/{{name}}.svg?branch={{branch}}
-   :target: http://travis-ci.org/{{organisation}}/{{name}}
+.. image:: https://github.com/actions/{{organisation}}/{{name}}/workflows/.github/workflows/tests.yml/badge.svg
+   :target: http://github.com/{{organisation}}/{{name}}
 
 .. image:: https://codecov.io/gh/{{organisation}}/{{name}}/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/{{organisation}}/{{name}}
