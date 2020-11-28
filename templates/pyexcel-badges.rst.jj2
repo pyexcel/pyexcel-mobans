@@ -5,7 +5,7 @@
    :target: https://awesome-python.com/#specific-formats-processing
 
 .. image:: https://github.com/actions/{{organisation}}/{{name}}/workflows/.github/workflows/tests.yml/badge.svg
-   :target: http://github.com/{{organisation}}/{{name}}
+   :target: http://github.com/{{organisation}}/{{name}}/actions
 
 .. image:: https://codecov.io/gh/{{organisation}}/{{name}}/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/{{organisation}}/{{name}}
