@@ -47,10 +47,6 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install -r tests/requirements.txt
-      - name: set up utf-8
-        if: {%raw%}${{ matrix.os == 'windows-latest' }}{%endraw%}
-
-        run: chcp 65001
       - name: test
         run: |
           pip freeze
