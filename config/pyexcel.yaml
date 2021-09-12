@@ -2,9 +2,9 @@ project: pyexcel
 name: pyexcel
 author: C.W.
 nick_name: pyexcel
-copyright: copyright 2015-2020 Onni Software Ltd.
+copyright: copyright 2015-2021 Onni Software Ltd.
 file_type: file type
-copyright_year: 2015-2020
+copyright_year: 2015-2021
 organisation: pyexcel
 contact: info@pyexcel.org
 license: New BSD
