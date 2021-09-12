@@ -45,8 +45,8 @@ jobs:
 
       - name: install
         run: |
-          pip install -r requirements.txt
-          pip install -r tests/requirements.txt
+          pip --use-deprecated=legacy-resolver install -r requirements.txt
+          pip --use-deprecated=legacy-resolver install -r tests/requirements.txt
       - name: test
         run: |
           pip freeze
