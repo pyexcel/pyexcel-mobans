@@ -4,5 +4,8 @@
     'License :: OSI Approved :: BSD License',
 {% block pyexcel_extra_classifiers %}
 {% endblock %}
-{% endblock %}
 
+{% endblock %}
+{%- block morefiles %}
+ "CONTRIBUTORS.rst",
+{%- endblock %}
