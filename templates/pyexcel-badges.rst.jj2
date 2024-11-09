@@ -19,10 +19,6 @@
 
 
 {% if release!='0.0.0' %}
-{% comment %}
-.. image:: https://pepy.tech/badge/{{name}}/month
-   :target: https://pepy.tech/project/{{name}}
-{% endcomment %}
 {% endif %}
 
 {% if is_on_conda %}
