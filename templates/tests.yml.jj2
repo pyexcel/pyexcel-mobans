@@ -44,6 +44,7 @@ jobs:
         uses: actions/setup-python@v3
         with:
             python-version: {% raw %} ${{ matrix.python_version }}{% endraw %}
+
             architecture: x64
 
       - name: install
