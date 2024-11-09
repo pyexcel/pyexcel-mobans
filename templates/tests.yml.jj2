@@ -46,6 +46,7 @@ jobs:
 
       - name: install
         run: |
+          pip install markupsafe==2.0.1
           pip --use-deprecated=legacy-resolver install -r requirements.txt
           pip --use-deprecated=legacy-resolver install -r tests/requirements.txt
       - name: test
