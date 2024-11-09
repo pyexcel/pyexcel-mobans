@@ -28,8 +28,8 @@ on: [push, pull_request]
 jobs:
 
   test:
-    name: ${{ matrix.os }} / ${{ matrix.python_version }}
-    runs-on: ${{ matrix.os }}-latest
+    name: {% raw %} ${{ matrix.os }} / ${{ matrix.python_version }}{%endraw%}
+    runs-on: {% raw %}${{ matrix.os }}-latest {%endraw%}
     strategy:
       fail-fast: false
       matrix:
