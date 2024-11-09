@@ -29,7 +29,9 @@ jobs:
 
   test:
     name: {% raw %} ${{ matrix.os }} / ${{ matrix.python_version }}{%endraw%}
+
     runs-on: {% raw %}${{ matrix.os }}-latest {%endraw%}
+
     strategy:
       fail-fast: false
       matrix:
@@ -46,7 +48,6 @@ jobs:
 
       - name: install
         run: |
-          pip install markupsafe==2.0.1
           pip --use-deprecated=legacy-resolver install -r requirements.txt
           pip --use-deprecated=legacy-resolver install -r tests/requirements.txt
       - name: test
