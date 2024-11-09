@@ -43,7 +43,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
-            python-version: {% raw %} ${{ matrix.python-version }}{% endraw %}
+            python-version: {% raw %} ${{ matrix.python_version }}{% endraw %}
 
       - name: install
         run: |
