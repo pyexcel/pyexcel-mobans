@@ -10,6 +10,10 @@ build:
   tools:
     python:
       version: 3.12
+{% if "docs/requirements.txt" is exists %}
+      install:
+         - requirements: docs/requirements.txt
+{% endif %}
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
@@ -18,11 +22,3 @@ sphinx:
 # Optionally build your docs in additional formats such as PDF
 formats:
   - pdf
-
-# Optionally set the version of Python and requirements required to build your docs
-python:
-  version: 3.7
-{% if "docs/requirements.txt" is exists %}
-  install:
-    - requirements: docs/requirements.txt
-{% endif %}
