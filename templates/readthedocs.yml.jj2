@@ -8,12 +8,7 @@ version: 2
 build:
   os: ubuntu-22.04
   tools:
-    python:
-      version: "3.12"
-{% if "docs/requirements.txt" is exists %}
-      install:
-         - requirements: docs/requirements.txt
-{% endif %}
+    python: "3.12"
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
@@ -22,3 +17,9 @@ sphinx:
 # Optionally build your docs in additional formats such as PDF
 formats:
   - pdf
+
+python:
+{% if "docs/requirements.txt" is exists %}
+   install:
+   - requirements: docs/requirements.txt
+{% endif %}
