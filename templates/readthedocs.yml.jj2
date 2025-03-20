@@ -18,8 +18,8 @@ sphinx:
 formats:
   - pdf
 
-python:
 {% if "docs/requirements.txt" is exists %}
+python:
    install:
    - requirements: docs/requirements.txt
 {% endif %}
