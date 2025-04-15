@@ -1,10 +1,10 @@
 Here is a typical conversation between the developer and the user::
 
- User: "I have uploaded an excel file"
-       "but your application says un-supported file format"
+      User: "I have uploaded an excel file"
+            "but your application says un-supported file format"
  Developer: "Did you upload an xlsx file or a csv file?"
- User: "Well, I am not sure. I saved the data using "
-       "Microsoft Excel. Surely, it must be in an excel format."
+      User: "Well, I am not sure. I saved the data using "
+            "Microsoft Excel. Surely, it must be in an excel format."
  Developer: "OK. Here is the thing. I were not told to support"
             "all available excel formats in day 1. Live with it"
             "or delay the project x number of days."
