@@ -13,8 +13,7 @@ Then install relevant development requirements:
 #. pip install -r requirements.txt
 #. pip install -r tests/requirements.txt
 
-Once you have finished your changes, please provide test case(s), relevant documentation
-and update changelog.yml
+Once you have finished your changes, please provide test case(s), relevant documentation.
 
 .. note::
 
@@ -41,7 +40,7 @@ On Windows, please issue this command::
     > test.bat
 
 
-Before you commit
+Optionally, before you commit
 ------------------------------
 
 Please run::
@@ -50,3 +49,7 @@ Please run::
 
 so as to beautify your code otherwise your build may fail your unit test.
 
+Before you raise pull request
+--------------------------------------------------------------------------------
+
+Please edit 'changelog.yml' and record your changes
