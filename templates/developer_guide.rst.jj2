@@ -40,7 +40,7 @@ On Windows, please issue this command::
     > test.bat
 
 
-Optionally, before you commit
+Before you commit
 ------------------------------
 
 Please run::
