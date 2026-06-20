@@ -98,7 +98,7 @@ Here's the sample code to write a dictionary to an {{file_type}} file:
 {%endblock%}
 
 {%block read_from_memory %}
-Read from an {{file_type}} from memory
+Read an {{file_type}} from memory
 ********************************************************************************
 
 Continue from previous example:
@@ -155,7 +155,7 @@ And you could as well do the same for columns:
    >>> print(json.dumps(partial_data))
    {"huge": [[21, 31], [22, 32], [23, 33], [24, 34], [25, 35], [26, 36]]}
 
-Obvious, you could do both at the same time:
+Obviously, you could do both at the same time:
 
 .. code-block:: python
 

@@ -47,7 +47,7 @@ Please run::
 
     $ make format
 
-so as to beautify your code otherwise your build may fail your unit test.
+so as to beautify your code, otherwise your build may fail your unit test.
 
 Before you raise pull request
 --------------------------------------------------------------------------------
