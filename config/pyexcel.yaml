@@ -22,3 +22,4 @@ language: Python
 lint_command: make lint
 excluded_github_users:
   - chfw
+  - Copilot
