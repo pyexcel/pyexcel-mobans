@@ -24,3 +24,5 @@ targets:
   - Makefile: Makefile.jj2
   - format.sh: format.sh.jj2
   - CONTRIBUTORS.rst: CONTRIBUTORS.rst.jj2
+  - AGENT.md: AGENT.md
+  - ".github/AGENT.md": AGENT.md
